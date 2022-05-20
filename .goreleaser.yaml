@@ -30,10 +30,16 @@ builds:
   - "7"
 
 archives:
-- format: binary
+- format: tar.gz
   replacements:
     386: i386
     amd64: x86_64
+
+  files:
+  - LICENSE
+  - etc/vand.yaml
+  - etc/systemd/vand@.service
+  - etc/systemd/vand.target
 
 checksum:
   name_template: 'checksums.txt'
