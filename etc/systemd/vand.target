@@ -1,0 +1,11 @@
+[Unit]
+Description=VANd
+
+Wants=vand@broker.service
+Wants=vand@car.service
+Wants=vand@display.service
+Wants=vand@env.service
+Wants=vand@gps.service
+Wants=vand@modem.service
+Wants=vand@pv.service
+Wants=vand@web.service

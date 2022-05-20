@@ -1,0 +1,75 @@
+# VANd Configuration File
+#
+# This file contains the configuration of various VANd components
+# Each component only interprets the relevant parts for itself.
+
+broker:
+  hostname: broker.0l.de
+  port: 1883
+
+  username: vand
+  password: XXXXX
+
+  topic: vand
+
+display:
+  port: /dev/spidev0.0
+
+  pins:
+    dc: "25"
+    reset: "27"
+    next: "x"
+
+#   pages:
+#   - id: battery
+#     next: Solar
+#     over:
+    
+#     time: 5.0 # seconds
+#     background-color: '#CCCCCC'
+
+#     widgets:
+#     - type: variable
+#       topic: bus/bat/v
+#       position: [0, 0]
+#       format: '%.2f'
+#       size: 5
+#       color: '#ff0000'
+
+#     - type: text
+#       position: [0, 0]
+#       size: 5
+#       color: '#ff0000'
+#       template: |
+#         {{ state("bus/bat/v") | printf("%.2f") }}
+
+#     - type: image
+#       position: [0, 0]
+#       size: [10, 10] # width/height
+#       file: phoenix.gif
+
+#   - name: Solar
+#     time: 10.0
+#     widgets: []
+
+gps:
+  port: /dev/serial0
+  baudrate: 9600
+
+  min_interval: 15m
+  min_distance: 100
+
+solar:
+  address: 172.23.156.156:1234
+
+car:
+  address: 172.23.156.146:1234
+
+env: {}
+
+modem:
+  address: 192.168.1.1
+  username: admin
+  password: KbazZe7e
+  
+  poll_interval: 1m

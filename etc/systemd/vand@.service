@@ -1,0 +1,19 @@
+[Unit]
+Description=VANd
+Documentation=https://github.com/stv0g/vand
+
+After=network.target
+PartOf=vand.target
+
+ConditionFileNotEmpty=/etc/vand.yaml
+
+[Service]
+Type=simple
+
+Restart=on-failure
+RestartSec=10
+
+ExecStart=/usr/local/bin/vand %i
+
+[Install]
+WantedBy=multi-user.target
