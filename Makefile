@@ -1,5 +1,5 @@
 TARGET = vand
-TARGET_HOST = root@rpi.bus.0l.de
+TARGET_HOST ?= root@rpi.bus.0l.de
 
 REMOTE = ssh -t -i ~/.ssh/id_rsa $(TARGET_HOST)
 
