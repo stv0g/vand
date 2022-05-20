@@ -48,8 +48,8 @@ func (d *Device) GetConfig() (*pb.SolarConfig, error) {
 	str := func(r uint16, len uint16) string {
 		str := ""
 		for i := uint16(0); i < len/2; i++ {
-			str += string(regs[r+i-off] >> 8)
-			str += string(regs[r+i-off] & 0xff)
+			str += string(byte(regs[r+i-off] >> 8))
+			str += string(byte(regs[r+i-off] & 0xff))
 		}
 		return strings.Trim(str, " ")
 	}
