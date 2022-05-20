@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/stv0g/vand/pkg/pb";
+
+message EnvironmentState {
+	float freezer_temp = 1;
+	float indoor_temp = 2;
+	float outdoor_temp = 3;
+
+	float barometric_pressure = 4;
+	float altitude = 5;
+	float humidity = 6;
+	float irradiation = 7;
+	float radiation = 8;
+	float co2_concentration = 9;
+
+	float v33_voltage = 10;
+	float bat_voltage = 11;
+}

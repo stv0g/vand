@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+option go_package = "github.com/stv0g/vand/pkg/pb";
+
+message ModemState {
+	message WWAN {
+		message Network {
+			uint32 mcc = 1;
+			uint32 mnc = 2;
+			uint32 lac = 3;
+			uint32 cid = 4;
+			string country = 5;
+		}
+
+		string operator = 1;
+
+		string connection_text = 2;
+
+		string register_network = 3;
+
+		int32 rx_level = 4;
+		int32 tx_level = 5;
+
+		bool roaming = 6;
+
+		string ipv4 = 7;
+		string ipv6 = 8;
+
+		uint32 mtu = 9;
+
+		
+		uint32 radio_quality = 10;
+
+		string imsi = 11;
+		string imei = 12;
+	}
+
+	message Wifi {
+
+	}
+
+	message Ethernet {
+
+	}
+
+	message Power {
+
+	}
+
+	WWAN wwan = 1;
+	Wifi wifi = 2;
+	Ethernet ethernet = 3;
+	Power power = 4;
+
+	string serial_number = 5;
+	uint64 data_transferred = 6;
+}

@@ -1,0 +1,106 @@
+package mockup
+
+import (
+	"fmt"
+	"image"
+	"image/color"
+	"image/draw"
+	"log"
+
+	"gioui.org/app"
+	"gioui.org/io/system"
+	"gioui.org/layout"
+	"gioui.org/op"
+	"gioui.org/unit"
+	"github.com/tdewolff/canvas"
+	"github.com/tdewolff/canvas/renderers/gio"
+)
+
+const (
+	Width  = 128
+	Height = 128
+)
+
+type Dev struct {
+	window *app.Window
+	rect   image.Rectangle
+	image  draw.Image
+}
+
+func New() (*Dev, error) {
+	d := &Dev{
+		window: app.NewWindow(
+			app.Title("vand"),
+			app.Size(unit.Px(2*Width), unit.Px(2*Height)),
+			app.MinSize(unit.Px(2*Width), unit.Px(2*Height)),
+			app.MaxSize(unit.Px(2*Width), unit.Px(2*Height)),
+		),
+		rect: image.Rectangle{
+			Max: image.Point{
+				Width,
+				Height,
+			},
+		},
+	}
+
+	d.image = image.NewRGBA(d.rect)
+	blue := color.RGBA{0, 0, 255, 255}
+	draw.Draw(d.image, d.rect, &image.Uniform{blue}, image.ZP, draw.Src)
+
+	go d.loop()
+
+	return d, nil
+}
+
+func (d *Dev) loop() {
+	var ops op.Ops
+	for {
+		e := <-d.window.Events()
+
+		switch e := e.(type) {
+
+		case system.DestroyEvent:
+			panic(e.Err)
+		case system.FrameEvent:
+			gtx := layout.NewContext(&ops, e)
+			layout.Center.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
+				c := gio.NewContain(gtx, float64(d.rect.Dx()), float64(d.rect.Dy()))
+				c.RenderImage(d.image, canvas.Identity)
+				return c.Dimensions()
+			})
+
+			e.Frame(gtx.Ops)
+		}
+	}
+}
+
+func (d *Dev) String() string {
+	return fmt.Sprintf("mockup.Dev{%s}", d.rect.Max)
+}
+
+// ColorModel implements display.Drawer.
+func (d *Dev) ColorModel() color.Model {
+	return color.RGBAModel
+}
+
+// Bounds implements display.Drawer. Min is guaranteed to be {0, 0}.
+func (d *Dev) Bounds() image.Rectangle {
+	return d.rect
+}
+
+// Draw implements display.Drawer.
+//
+// It draws synchronously, once this function returns, the display is updated.
+// It means that on slow bus (I²C), it may be preferable to defer Draw() calls
+// to a background goroutine.
+func (d *Dev) Draw(r image.Rectangle, src image.Image, sp image.Point) error {
+	draw.Draw(d.image, r, src, sp, draw.Src)
+	d.window.Invalidate()
+	return nil
+}
+
+func (d *Dev) Halt() error {
+	log.Println("Halt not supported yet")
+
+	return nil
+}

@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+option go_package = "github.com/stv0g/vand/pkg/pb";
+
+enum GpsFix {
+	FIX_INVALID = 0; 				/* Not fixed */
+	FIX_GPS = 1;	 				/* GPS */
+	FIX_DGPS = 2;					/* Differential GPS */
+}
+
+enum GpsFixMode {
+	FIX_MODE_INVALID = 0;				/* Not fixed */
+	FIX_MODE_2D = 1;				/* 2D GPS */
+	FIX_MODE_3D = 2;				/* 3D GPS */
+}
+
+message GpsSatellite {
+	uint32 elevation = 1;				/* Satellite elevation */
+	uint32 azimuth = 2;				/* Satellite azimuth */
+	uint32 snr = 3;					/* Satellite signal noise ratio */
+	int64 num = 4;					/* Satellite number */
+}
+
+message GpsTime {
+	uint32 hour = 1;				/* Hour */
+	uint32 minute = 2;				/* Minute */
+	uint32 second = 3;				/* Second */
+	uint32 thousand = 4;				/* Thousand */
+}
+
+message GpsDate {
+	uint32 day = 1;					/* Day (start from 1) */
+	uint32 month = 2;				/* Month (start from 1) */
+	uint32 year = 3;				/* Year (start from 2000) */
+}
+
+message GpsState {
+	double latitude = 1;				/* Latitude (degrees) */
+	double longitude = 2;				/* Longitude (degrees) */
+	double altitude = 3;				/* Altitude (meters) */
+	GpsFix fix = 4;					/* Fix status */
+	GpsFixMode fix_mode = 5;			/* Fix mode */
+	GpsDate date = 6;				/* Fix date */
+	GpsTime time = 7;				/* Time in UTC */
+
+	uint32 sats_in_view = 8;			/* Number of sats in view */
+	uint32 sats_in_use = 9;				/* Number of sats in use */
+
+	repeated int64 sats_id_in_use = 10; 		/* ID list of satellite in use */
+	repeated GpsSatellite sats_desc_in_view = 11;	/* Information of satellites in view */
+	
+	double dop_h = 12;				/* Horizontal dilution of precision */
+	double dop_p = 13;				/* Position dilution of precision  */
+	double dop_v = 14;				/* Vertical dilution of precision  */
+	
+	bool valid = 15;				/* GPS validity */
+	double speed = 16;				/* Ground speed, unit: m/s */
+	double cog = 17;				/* Course over ground */
+	double variation = 18;				/* Magnetic variation */
+}

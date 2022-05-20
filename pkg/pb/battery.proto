@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "github.com/stv0g/vand/pkg/pb";
+
+message BatteryState {
+	float soc = 1;
+
+	float pack_voltage = 2;
+	float pack_current = 3;
+
+	uint32 errors = 4;
+	uint32 balancing = 5;
+	float voltages = 6;
+	float temperatures = 7;
+
+	float cycle_capacity = 8;
+	float design_capacity = 9;
+
+	uint32 cycle_cnt = 10;
+	uint32 cell_cnt = 11;
+	uint32 ntc_cnt = 12;
+
+	bool charge_fet_en = 13;
+	bool discharge_fet_en = 14;
+}

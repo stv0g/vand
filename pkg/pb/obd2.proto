@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option go_package = "github.com/stv0g/vand/pkg/pb";
+
+message CarOBD2State {
+	/* See https://en.wikipedia.org/wiki/OBD-II_PIDs */
+	bool motor_running = 1;
+
+	float vehicle_speed = 2;
+	float engine_rpm = 3;
+	float engine_load = 4;
+
+	float coolant_temperature = 5;
+	float oil_temperature = 6;
+	float ambient_temperature = 7;
+	float intake_air_temperature = 8;
+
+	float throttle_percentage = 9;
+	float fuel_tank_level = 10;
+	float fuel_rate = 11;
+
+	float distance_since_dtc_clear = 12;
+
+	float board_voltage = 13;
+
+	uint32 transmission_actual_gear = 14;
+
+	uint32 odomoeter = 15;
+}

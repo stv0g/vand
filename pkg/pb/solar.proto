@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+option go_package = "github.com/stv0g/vand/pkg/pb";
+
+enum SolarChargingState {
+	STATE_DEACTIVATED = 0;
+	STATE_ACTIVATED = 1;
+	STATE_MPPT = 2;
+	STATE_EQUALIZING = 3;
+	STATE_BOOST = 4;
+	STATE_FLOATING = 5;
+	STATE_CURRENT_LIMITING = 6;
+}
+
+enum ProductType {
+	TYPE_CONTROLLER = 0;
+	TYPE_INVERTER = 1;
+}
+
+enum BatteryType {
+	BATTERY_TYPE_OPEN = 0;
+	BATTERY_TYPE_SEALED = 1;
+	BATTERY_TYPE_GEL = 2;
+	BATTERY_TYPE_LITHIUM = 3;
+	BATTERY_TYPE_CUSTOMIZED = 4;
+}
+
+message SolarConfig {
+	uint32 max_system_voltage = 1;
+	uint32 rated_charging_current = 2;
+	uint32 rated_discharging_current = 3;
+	
+	ProductType product_type = 4;
+
+	string product_model = 5;
+	string software_version = 6;
+	string hardware_version = 7;
+	uint32 product_serial_number = 8;
+
+	uint32 production_year = 9;
+	uint32 production_month = 10;
+
+	BatteryType battery_type = 11;
+}
+
+message SolarState {
+	float battery_soc = 9;
+	float battery_voltage = 10;
+	float battery_voltage_day_min = 11;
+	float battery_voltage_day_max = 12;
+	
+	float charging_current = 13;
+	float charging_current_day_max = 14;
+	
+	float discharging_current = 15;
+	float discharging_current_day_max = 16;
+
+	float charging_power = 17;
+	float charging_power_day_max = 18;
+
+	float discharging_power = 19;
+	float discharging_power_day_max = 20;
+
+	float charging_day_amp_hours = 21;
+	float discharging_day_amp_hours = 22;
+
+	float generation_day = 23;
+	float consumption_day = 24;
+
+	uint32 operation_days = 25;
+
+	uint32 battery_over_discharge_cnt = 26;
+	uint32 battery_full_charge_cnt = 27;
+
+	uint32 charging_total_amp_hours = 28;
+	uint32 discharging_total_amp_hours = 29;
+
+	uint32 generation_total = 30;
+	uint32 consumption_total = 31;
+
+	uint32 faults = 32;
+
+	float temperature_controller = 33;
+	float temperature_battery = 34;
+
+	float panel_voltage = 35;
+	float panel_current = 36;
+
+	SolarChargingState charging_state = 37;
+}

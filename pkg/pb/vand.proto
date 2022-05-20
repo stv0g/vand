@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option go_package = "github.com/stv0g/vand/pkg/pb";
+
+import "solar.proto";
+import "battery.proto";
+import "gps.proto";
+import "obd2.proto";
+import "environment.proto";
+import "modem.proto";
+
+message Timestamp {
+	uint32 seconds = 1;
+	uint32 nanoseconds = 2;
+}
+
+message StateUpdatePoint {
+	Timestamp timestamp = 1;
+
+	SolarState solar = 2;
+	BatteryState bat = 3;
+	GpsState gps = 4;
+	CarOBD2State car = 5;
+	EnvironmentState env = 6;
+	ModemState modem = 7;
+}
+
+message StateUpdateMessage {
+	repeated StateUpdatePoint points = 1;
+}
+
+message Message {
+	StateUpdateMessage status_update = 1;
+
+	bytes signature = 2;
+}
