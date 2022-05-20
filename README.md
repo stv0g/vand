@@ -12,7 +12,6 @@
 
 ## 🚧 VANd is currently under-development
 
-
 [VANd][vand] is a set of Micro-services to monitor and control a camper van / RV.
 
 ## Architecture
@@ -23,14 +22,17 @@
 
 - GPS tracking
   - for NMEA GPS modules
-- Battery-managment System monitoring 
+- Battery-managment System monitoring
   - for JBD SmartBMS
 - Solar / PV monitoring
   - for Renogy Rover MPPT chargers
 - Wifi/Internet connectivity monitoring
   - for NETGEAR Nighthawk LTE routers
-- OLED display for basic facts
-- React Web-interface
+- Vehicle monitoring
+  - via OBD2 port
+- User-interfaces
+  - small OLED display for quick glance state
+  - embedded React Web-interface
 
 ## Getting started
 
@@ -48,7 +50,7 @@ Documentation of ɯice can be found in the [`docs/`](./docs) directory.
 
 ## Authors
 
--   Steffen Vogel ([@stv0g](https://github.com/stv0g), Institute for Automation of Complex Power Systems, RWTH Aachen University)
+- Steffen Vogel ([@stv0g](https://github.com/stv0g), Institute for Automation of Complex Power Systems, RWTH Aachen University)
 
 ## License
 
