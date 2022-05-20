@@ -12,10 +12,10 @@ endif
 
 all: run
 
-frontend:
+frontend-code:
 	npm --prefix frontend/ run-script build
 
-build: frontend
+build: frontend-code
 	go build -tags embed_frontend -o $(TARGET) ./cmd/
 
 deploy: build

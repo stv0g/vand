@@ -23,13 +23,19 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: 1.18
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '17'
     
     - name: Install build and test dependencies
       run: |
         go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
         go install honnef.co/go/tools/cmd/staticcheck@latest
+        npm --prefix frontend install
 
-    - name: Run wice build
+    - name: Build code
       run: make build
       
     - name: Run vet
