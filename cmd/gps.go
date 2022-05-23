@@ -54,6 +54,15 @@ func runGPS(cmd *cobra.Command, args []string) {
 			Longitude: state.Longitude,
 		}
 
+		// Ignore invalid positions
+		if newPosition == types.NullIsland {
+			continue
+		}
+
+		if lastPosition != types.NullIsland && newPosition.DistanceTo(lastPosition) > 1000 {
+			continue
+		}
+
 		// Owntracks
 		now := time.Now()
 		intervalElapsed := now.After(lastPublish.Add(cfg.GPS.MinInterval))

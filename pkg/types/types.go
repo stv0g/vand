@@ -11,6 +11,8 @@ type Coordinate struct {
 	Longitude float64 `json:"lon"`
 }
 
+var NullIsland = Coordinate{0, 0}
+
 // Distance function returns the distance (in meters) between two points of
 //     a given longitude and latitude relatively accurately (using a spherical
 //     approximation of the Earth) through the Haversin Distance Formula for
