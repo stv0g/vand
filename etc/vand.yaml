@@ -59,6 +59,9 @@ gps:
   min_interval: 15m
   min_distance: 100
 
+  owntracks:
+    topic: owntracks/owntracks/bus
+
 solar:
   address: 172.23.156.156:1234
 

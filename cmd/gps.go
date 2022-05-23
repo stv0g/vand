@@ -87,7 +87,7 @@ func PublishToOwntracks(client mqtt.Client, s *pb.GpsState) error {
 		return fmt.Errorf("failed to marshal location update: %w", err)
 	}
 
-	t := client.Publish("owntracks/owntracks/bus", 2, false, msg)
+	t := client.Publish(cfg.GPS.OwnTracks.Topic, 2, false, msg)
 	go func() {
 		<-t.Done()
 		if t.Error() != nil {

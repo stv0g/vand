@@ -32,12 +32,18 @@ type Solar struct {
 type Environment struct {
 }
 
+type OwnTracks struct {
+	Topic string `yaml:"topic"`
+}
+
 type GPS struct {
 	Port     string `yaml:"port"`
 	Baudrate int    `yaml:"baudrate"`
 
 	MinInterval time.Duration `yaml:"min_interval"`
 	MinDistance float64       `yaml:"min_distance"`
+
+	OwnTracks OwnTracks `yaml:"owntracks"`
 }
 
 type Display struct {
