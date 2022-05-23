@@ -18,7 +18,7 @@ require (
 	github.com/spf13/cobra v1.4.0
 	github.com/spf13/viper v1.11.0
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
-	github.com/tdewolff/canvas v0.0.0-20220427164545-165dd6a5f5ac
+	github.com/tdewolff/canvas v0.0.0-00010101000000-000000000000
 	google.golang.org/protobuf v1.28.0
 	gopkg.in/yaml.v2 v2.4.0
 	periph.io/x/conn/v3 v3.6.10
@@ -32,7 +32,8 @@ require (
 	github.com/adrg/strutil v0.3.0 // indirect
 	github.com/adrg/sysfont v0.1.2 // indirect
 	github.com/adrg/xdg v0.4.0 // indirect
-	github.com/benoitkugler/textlayout v0.1.2 // indirect
+	github.com/benoitkugler/textlayout v0.1.3-0.20220520134940-234370ccc6fe // indirect
+	github.com/benoitkugler/textprocessing v0.0.2 // indirect
 	github.com/dsnet/compress v0.0.1 // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
@@ -74,6 +75,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.0-20220512140231-539c8e751b99 // indirect
 )
 
-replace github.com/tdewolff/canvas => ../../canvas
-
-replace github.com/benoitkugler/textlayout => ../../textlayout
+replace github.com/tdewolff/canvas => github.com/stv0g/canvas v0.0.0-20220520160803-c53607df80eb
