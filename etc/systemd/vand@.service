@@ -1,5 +1,5 @@
 [Unit]
-Description=VANd
+Description=VANd %i service
 Documentation=https://github.com/stv0g/vand
 
 After=network.target
