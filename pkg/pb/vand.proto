@@ -23,6 +23,8 @@ message StateUpdatePoint {
 	CarOBD2State car = 5;
 	EnvironmentState env = 6;
 	ModemState modem = 7;
+
+	SolarConfig solar_config = 10;
 }
 
 message StateUpdateMessage {
