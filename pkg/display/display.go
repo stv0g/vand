@@ -18,7 +18,5 @@ var (
 type Display struct {
 	display.Drawer
 
-	Pages map[string]Page
-
 	next chan struct{}
 }

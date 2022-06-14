@@ -1,6 +1,7 @@
 package display
 
 import (
+	"fmt"
 	"image"
 	"time"
 
@@ -9,25 +10,33 @@ import (
 	"github.com/tdewolff/canvas/renderers/rasterizer"
 )
 
-func (d *Display) PlaybackPages(pages []Page, s *store.Store) error {
+func (d *Display) Play(pages map[string]*Page, s *store.Store) error {
 	dim := Pixels / DotsPerMillimeter
 	// dim = 500
 
+	for _, page := range pages {
+		if err := page.Init(); err != nil {
+			return fmt.Errorf("failed to initialize page: %w", err)
+		}
+	}
+
 	c := canvas.New(dim, dim)
 
-	for _, page := range pages {
-		c.Reset()
-		ctx := canvas.NewContext(c)
+	for {
+		for _, page := range pages {
+			c.Reset()
+			ctx := canvas.NewContext(c)
 
-		if err := page.Draw(ctx, s); err != nil {
+			if err := page.Draw(ctx, s); err != nil {
+				return fmt.Errorf("failed to draw page: %w", err)
+			}
 
+			rst := rasterizer.Draw(c, Resolution, canvas.SRGBColorSpace{})
+			d.Draw(rst.Bounds(), rst, image.ZP)
+
+			t := time.NewTimer(page.Time)
+			<-t.C
 		}
-
-		rst := rasterizer.Draw(c, Resolution, canvas.SRGBColorSpace{})
-		d.Draw(rst.Bounds(), rst, image.ZP)
-
-		t := time.NewTimer(0)
-		<-t.C
 	}
 
 	return nil

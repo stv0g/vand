@@ -2,12 +2,15 @@ package config
 
 import (
 	"fmt"
+	"image/color"
 	"log"
 	"strings"
 	"time"
 
 	"github.com/mitchellh/mapstructure"
 	"github.com/spf13/viper"
+	"github.com/stv0g/vand/pkg/display/widget"
+	"github.com/stv0g/vand/pkg/mqtt"
 	"gopkg.in/yaml.v2"
 )
 
@@ -23,10 +26,35 @@ type Car struct {
 	Address string `yaml:"address"`
 
 	TankVolume float32 `yaml:"tank_volume"`
+
+	PollInterval time.Duration `yaml:"poll_interval"`
 }
 
 type Solar struct {
 	Address string `yaml:"address"`
+
+	PollInterval time.Duration `yaml:"poll_interval"`
+}
+
+type Display struct {
+	Port string `yaml:"port"`
+
+	Pins struct {
+		DC    string `yaml:"dc"`
+		Reset string `yaml:"reset"`
+		Next  string `yaml:"next"`
+	}
+
+	Pages map[string]DisplayPage `yaml:"pages"`
+}
+
+type DisplayPage struct {
+	Next string `yaml:"next"`
+	Over string `yaml:"over"`
+
+	Time            time.Duration   `yaml:"time"`
+	BackgroundColor color.Color     `yaml:"background-color"`
+	Widgets         []widget.Widget `yaml:"widgets"`
 }
 
 type Environment struct {
@@ -44,26 +72,6 @@ type GPS struct {
 	MinDistance float64       `yaml:"min_distance"`
 
 	OwnTracks OwnTracks `yaml:"owntracks"`
-}
-
-type Display struct {
-	Port string `yaml:"port"`
-
-	Pins struct {
-		DC    string `yaml:"dc"`
-		Reset string `yaml:"reset"`
-		Next  string `yaml:"next"`
-	}
-}
-
-type Broker struct {
-	Hostname string `yaml:"hostname"`
-	Port     uint16 `yaml:"port"`
-
-	Username string `yaml:"username"`
-	Password string `yaml:"password"`
-
-	Topic string `yaml:"topic"`
 }
 
 type Web struct {
@@ -86,8 +94,12 @@ type Bridge struct {
 type Config struct {
 	*viper.Viper `yaml:"-"`
 
-	Broker      Broker `yaml:"broker"`
-	BrokerCloud Broker `yaml:"broker_cloud"`
+	Debug bool `yaml:"debug"`
+
+	DataDir string `yaml:"data_dir"`
+
+	Broker      mqtt.BrokerConfig `yaml:"broker"`
+	BrokerCloud mqtt.BrokerConfig `yaml:"broker_cloud"`
 
 	Display     Display     `yaml:"display"`
 	Web         Web         `yaml:"web"`
@@ -103,6 +115,7 @@ func decodeOption(cfg *mapstructure.DecoderConfig) {
 		mapstructure.StringToTimeDurationHookFunc(),
 		mapstructure.StringToSliceHookFunc(","),
 		mapstructure.TextUnmarshallerHookFunc(),
+		widget.DecodeHookFunc(),
 	)
 
 	cfg.ZeroFields = false
@@ -116,8 +129,13 @@ func NewConfig(configFile string) (*Config, error) {
 		Viper: viper.New(),
 	}
 
+	cfg.SetDefault("data_dir", "/var/lib/vand")
+
 	cfg.SetDefault("broker.port", 1883)
 	cfg.SetDefault("broker.topic", "vand")
+
+	cfg.SetDefault("broker_cloud.port", 1883)
+	cfg.SetDefault("broker_cloud.topic", "vand")
 
 	cfg.SetDefault("web.listen", ":8080")
 	cfg.SetDefault("web.static", "./frontend/build")
@@ -156,7 +174,7 @@ func NewConfig(configFile string) (*Config, error) {
 
 	log.Printf("Loaded configuration:\n")
 	bs, _ := yaml.Marshal(cfg)
-	fmt.Print(string(bs))
+	log.Writer().Write(bs)
 
 	return cfg, nil
 }

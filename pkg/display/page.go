@@ -1,46 +1,42 @@
 package display
 
 import (
-	"encoding/json"
-	"image/color"
-	"time"
+	"fmt"
+	"log"
 
+	"github.com/stv0g/vand/pkg/config"
 	"github.com/stv0g/vand/pkg/store"
 	"github.com/tdewolff/canvas"
 )
 
 type Page struct {
-	ID   string `json:"id"`
-	Next string `json:"next"`
-	Over string `json:"over"`
+	config.DisplayPage
 
-	Time            time.Duration `json:"time"`
-	BackgroundColor color.Color   `json:"background-color"`
-
-	Widgets    []Widget          `json:"-"`
-	WidgetsRaw []json.RawMessage `json:"widgets"`
+	over *Page
+	next *Page
 }
 
-func (p *Page) UnmarshalJSON(b []byte) error {
-	type page Page
-
-	if err := json.Unmarshal(b, (*page)(p)); err != nil {
-		return err
+func (p *Page) Draw(c *canvas.Context, s *store.Store) error {
+	if p.over != nil {
+		if err := p.over.Draw(c, s); err != nil {
+			return err
+		}
 	}
 
-	var err error
-	if p.Widgets, err = unmarshalWidgets(p.WidgetsRaw); err != nil {
-		return err
+	for _, widget := range p.Widgets {
+		log.Printf("draw widget %+#v", widget)
+		if err := widget.Draw(c, s); err != nil {
+			return err
+		}
 	}
 
 	return nil
 }
 
-func (p *Page) Draw(c *canvas.Context, s *store.Store) error {
-
+func (p *Page) Init() error {
 	for _, widget := range p.Widgets {
-		if err := widget.Draw(c, s); err != nil {
-			return err
+		if err := widget.Init(); err != nil {
+			return fmt.Errorf("failed to initialize widget: %w", err)
 		}
 	}
 
