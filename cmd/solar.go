@@ -1,15 +1,17 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"log"
 	"os"
+	"os/signal"
+	"syscall"
+	"time"
 
 	"github.com/spf13/cobra"
 	"github.com/stv0g/vand/pkg/devices/solar/renogy"
+	"github.com/stv0g/vand/pkg/mqtt"
 	"github.com/stv0g/vand/pkg/pb"
-	"github.com/stv0g/vand/pkg/types"
 )
 
 func init() {
@@ -23,29 +25,44 @@ var solarCmd = &cobra.Command{
 }
 
 func runSolar(cmd *cobra.Command, args []string) {
+	termSig := make(chan os.Signal, 1)
+	signal.Notify(termSig, syscall.SIGINT, syscall.SIGTERM)
+
+	updateSig := make(chan os.Signal, 1)
+	signal.Notify(updateSig, syscall.SIGUSR1)
+
+	client, err := mqtt.NewClient(&cfg.Broker, "solar", cfg.DataDir, false)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	topic := fmt.Sprintf("%s/update", cfg.Broker.Topic)
+
 	d, err := renogy.NewDevice(cfg.Solar.Address)
-
-	sts, err := d.GetState()
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("Failed to initialize device: %s", err)
 	}
 
-	json.NewEncoder(os.Stdout).Encode(sts)
+	tick := time.NewTicker(cfg.Solar.PollInterval)
+	for {
+		sts, err := d.GetState()
+		if err != nil {
+			log.Printf("Failed to get state: %s", err)
+			continue
+		}
 
-	cfg, err := d.GetConfig()
-	if err != nil {
-		log.Fatal(err)
-	}
+		sup := &pb.StateUpdatePoint{
+			Solar: sts,
+		}
 
-	json.NewEncoder(os.Stdout).Encode(cfg)
+		client.PublishUpdate(topic, sup)
 
-	sum := pb.StateUpdatePoint{
-		Solar: sts,
-	}
+		select {
+		case <-termSig:
+			break
 
-	f := types.Flatten(sum)
-	for k, v := range f {
-		fmt.Printf("%s = %v\n", k, v)
-
+		case <-updateSig:
+		case <-tick.C:
+		}
 	}
 }
