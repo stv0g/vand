@@ -7,17 +7,19 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/stv0g/vand/pkg/config"
+	"github.com/stv0g/vand/pkg/store"
 	"github.com/stv0g/vand/pkg/web/handlers"
 )
 
 const apiBase = "/api/v1"
 
-func Run(cfg *config.Config, version, commit, date string) {
+func Run(cfg *config.Config, store *store.Store, version, commit, date string) {
 	router := gin.Default()
 
 	router.Use(StaticMiddleware(cfg))
 
 	router.GET(apiBase+"/config", handlers.HandleConfigWith(version, commit, date))
+	router.GET(apiBase+"/state", handlers.HandleStateWith(store))
 
 	server := &http.Server{
 		Addr:           cfg.Web.Listen,
