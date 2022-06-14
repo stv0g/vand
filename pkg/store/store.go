@@ -22,7 +22,9 @@ type Store struct {
 }
 
 func NewStore(client *mqtt.Client, topic string) (*Store, error) {
-	s := &Store{}
+	s := &Store{
+		subs: map[chan *pb.StateUpdatePoint]struct{}{},
+	}
 
 	client.Subscribe(topic, 2, s.messageHandler)
 
@@ -68,7 +70,7 @@ func (s *Store) Subscribe() (chan *pb.StateUpdatePoint, error) {
 
 	s.subs[ch] = struct{}{}
 
-	return nil, nil
+	return ch, nil
 }
 
 func (s *Store) Unsubscribe(ch chan *pb.StateUpdatePoint) {
