@@ -42,16 +42,16 @@ func (d *Device) GetSentence() (nmea.Sentence, error) {
 		return nil, nil
 	}
 
-	s, err := nmea.Parse(scanner.Text())
+	t := scanner.Text()
+	s, err := nmea.Parse(t)
 	if err != nil {
-		return nil, fmt.Errorf("failed to parse NMEA sentence: %w", err)
+		return nil, fmt.Errorf("failed to parse NMEA sentence: %s: %w", t, err)
 	}
 
 	return s, nil
 }
 
 func (d *Device) GetState() (*pb.GpsState, error) {
-
 	s, err := d.GetSentence()
 	if err != nil {
 		return nil, err
@@ -143,7 +143,7 @@ func (d *Device) setTime(t *nmea.Time) {
 
 func (d *Device) setDate(t *nmea.Date) {
 	d.state.Date = &pb.GpsDate{
-		Year:  uint32(t.YY),
+		Year:  2000 + uint32(t.YY),
 		Month: uint32(t.MM),
 		Day:   uint32(t.DD),
 	}
