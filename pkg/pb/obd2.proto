@@ -21,9 +21,15 @@ message CarOBD2State {
 
 	float distance_since_dtc_clear = 12;
 
-	float board_voltage = 13;
+	float absolute_barometric_pressure = 13;
 
 	uint32 transmission_actual_gear = 14;
 
 	uint32 odomoeter = 15;
+
+	uint32 runtime_since_start = 16;
+
+	float control_module_voltage = 17;
+
+	float engine_oil_temperature = 18;
 }
