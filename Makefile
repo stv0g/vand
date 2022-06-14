@@ -12,17 +12,20 @@ endif
 
 all: run
 
-frontend-code:
+frontend:
 	npm --prefix frontend/ run-script build
 
-build: frontend-code
+build:
 	go build -tags embed_frontend -o $(TARGET) ./cmd/
 
 deploy: build
 	rsync --progress $(TARGET) $(TARGET_HOST):/usr/local/bin/$(TARGET)
 	rsync --progress etc/vand.yaml $(TARGET_HOST):/etc/
 
+restart: deploy
+	$(REMOTE) systemctl restart vand@gps
+
 run: deploy
 	$(REMOTE) /usr/local/bin/$(TARGET) gps
 
-.PHONY: build run
+.PHONY: build run frontend
