@@ -484,11 +484,11 @@ type WWAN struct {
 		Apn            string `json:"apn,omitempty"`
 		Username       string `json:"username,omitempty"`
 		Password       string `json:"password,omitempty"`
-		Authtype       string `json:"authtype,omitempty"`
-		IPaddr         string `json:"ipaddr,omitempty"`
+		AuthType       string `json:"authtype,omitempty"`
+		IPaddress      string `json:"ipaddr,omitempty"`
 		AccessControl  int    `json:"access_control,omitempty"`
 		Type           string `json:"type,omitempty"`
-		Pdproamingtype string `json:"pdproamingtype,omitempty"`
+		PDPRoamingType string `json:"pdproamingtype,omitempty"`
 	} `json:"profileList"`
 	Profile struct {
 		Default               string `json:"default"`
@@ -498,16 +498,16 @@ type WWAN struct {
 	PromptForPwd string `json:"promptForPwd"`
 	DataUsage    struct {
 		Total struct {
-			LteBillingTx  int `json:"lteBillingTx"`
-			LteBillingRx  int `json:"lteBillingRx"`
-			CdmaBillingTx int `json:"cdmaBillingTx"`
-			CdmaBillingRx int `json:"cdmaBillingRx"`
+			LTEBillingTx  int `json:"lteBillingTx"`
+			LTEBillingRx  int `json:"lteBillingRx"`
+			CDMABillingTx int `json:"cdmaBillingTx"`
+			CDMABillingRx int `json:"cdmaBillingRx"`
 			GwBillingTx   int `json:"gwBillingTx"`
 			GwBillingRx   int `json:"gwBillingRx"`
-			LteLifeTx     int `json:"lteLifeTx"`
-			LteLifeRx     int `json:"lteLifeRx"`
-			CdmaLifeTx    int `json:"cdmaLifeTx"`
-			CdmaLifeRx    int `json:"cdmaLifeRx"`
+			LTELifeTx     int `json:"lteLifeTx"`
+			LTELifeRx     int `json:"lteLifeRx"`
+			CDMALifeTx    int `json:"cdmaLifeTx"`
+			CDMALifeRx    int `json:"cdmaLifeRx"`
 			GwLifeTx      int `json:"gwLifeTx"`
 			GwLifeRx      int `json:"gwLifeRx"`
 		} `json:"total"`
@@ -525,7 +525,7 @@ type WWAN struct {
 		ServerDaysLeft            int    `json:"serverDaysLeft"`
 		ServerErrorCode           string `json:"serverErrorCode"`
 		ServerLowBalance          bool   `json:"serverLowBalance"`
-		ServerMsisdn              string `json:"serverMsisdn"`
+		ServerMSISDN              string `json:"serverMsisdn"`
 		ServerRechargeURL         string `json:"serverRechargeUrl"`
 		DataWarnEnable            bool   `json:"dataWarnEnable"`
 		PlanSize                  int    `json:"planSize"`
@@ -570,21 +570,21 @@ type WWAN struct {
 		SCClist  []struct {
 		} `json:"SCClist"`
 	} `json:"ca"`
-	ConnectionText string `json:"connectionText"`
-	SessDuration   int    `json:"sessDuration"`
-	SessStartTime  int    `json:"sessStartTime"`
-	SignalStrength struct {
-		Rssi int `json:"rssi"`
-		Rscp int `json:"rscp"`
-		Ecio int `json:"ecio"`
-		Rsrp int `json:"rsrp"`
-		Rsrq int `json:"rsrq"`
-		Bars int `json:"bars"`
-		Sinr int `json:"sinr"`
+	ConnectionText   string `json:"connectionText"`
+	SessionDuration  int    `json:"sessDuration"`
+	SessionStartTime int    `json:"sessStartTime"`
+	SignalStrength   struct {
+		RSSI int `json:"rssi"`
+		RSCP int `json:"rscp"`
+		ECIO int `json:"ecio"`
+		RSRP int `json:"rsrp"`
+		RSRQ int `json:"rsrq"`
+		BARS int `json:"bars"`
+		SINR int `json:"sinr"`
 	} `json:"signalStrength"`
 	DiagInfo []struct {
-		LteAttached       bool   `json:"lteAttached,omitempty"`
-		Nr5GAttached      bool   `json:"nr5gAttached,omitempty"`
+		LTEAttached       bool   `json:"lteAttached,omitempty"`
+		NR5GAttached      bool   `json:"nr5gAttached,omitempty"`
 		EndcEnabledConfig bool   `json:"endcEnabledConfig,omitempty"`
 		LTESigValid       bool   `json:"ltesigValid,omitempty"`
 		LTESigRssi        string `json:"ltesigRssi,omitempty"`
@@ -596,7 +596,7 @@ type WWAN struct {
 		NR5GsigRsrq       string `json:"nr5gsigRsrq,omitempty"`
 		NR5GsigSnr        string `json:"nr5gsigSnr,omitempty"`
 	} `json:"diagInfo"`
-	LteBandInfo []struct {
+	LTEBandInfo []struct {
 		IsPcc          bool   `json:"isPcc,omitempty"`
 		SccID          int    `json:"sccId,omitempty"`
 		SccState       int    `json:"sccState,omitempty"`
@@ -633,8 +633,8 @@ type SIM struct {
 	MEP struct {
 	} `json:"mep"`
 	PhoneNumber   string `json:"phoneNumber"`
-	Iccid         string `json:"iccid"`
-	Imsi          string `json:"imsi"`
+	ICCID         string `json:"iccid"`
+	IMSI          string `json:"imsi"`
 	SPN           string `json:"SPN"`
 	Status        string `json:"status"`
 	SprintSimLock int    `json:"sprintSimLock"`
@@ -941,7 +941,15 @@ func (m *Modem) GetModel() (*Model, error) {
 }
 
 func (m *Modem) GetState() (*pb.ModemState, error) {
-	s := &pb.ModemState{}
+	n, err := m.GetModel()
+	if err != nil {
+		return nil, err
+	}
 
-	return s, nil
+	return &pb.ModemState{
+		Wwan: &pb.ModemState_WWAN{
+			Operator:       n.WWAN.Connection,
+			ConnectionText: n.WWAN.ConnectionText,
+		},
+	}, nil
 }
