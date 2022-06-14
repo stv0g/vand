@@ -6,25 +6,19 @@ import (
 	"strings"
 )
 
-const (
-	// ScopeDelimiter is the character used for joining multi-level strings
-	// make configurable with a tag?
-	ScopeDelimiter = "."
-)
-
 var enumerables = map[reflect.Kind]bool{reflect.Slice: true, reflect.Array: true}
 
 // Flatten returns all keys and corresponding values of a struct in a one-level-deep map
-func Flatten(in interface{}) map[string]interface{} {
+func Flatten(in interface{}, sep string) map[string]interface{} {
 	if in == nil {
 		return nil
 	}
 	m := map[string]interface{}{}
-	appendValue(m, reflect.ValueOf(in), "")
+	appendValue(m, reflect.ValueOf(in), "", sep)
 	return m
 }
 
-func appendValue(m map[string]interface{}, v reflect.Value, key string) {
+func appendValue(m map[string]interface{}, v reflect.Value, key string, sep string) {
 	// Iterate pointers until the value
 	for v.Kind() == reflect.Ptr {
 		if v.IsNil() {
@@ -54,10 +48,10 @@ func appendValue(m map[string]interface{}, v reflect.Value, key string) {
 			}
 
 			if key != "" {
-				sk = key + ScopeDelimiter + sk
+				sk = key + sep + sk
 			}
 
-			appendValue(m, sv, sk)
+			appendValue(m, sv, sk, sep)
 		}
 		return
 	}
@@ -70,7 +64,7 @@ func appendValue(m map[string]interface{}, v reflect.Value, key string) {
 	// make 1 vs. 0 indexing configurable with tags?
 	if enumerables[v.Kind()] {
 		for i := 0; i < v.Len(); i++ {
-			sk := key + ScopeDelimiter + strconv.Itoa(i)
+			sk := key + sep + strconv.Itoa(i)
 			m[sk] = v.Index(i).Interface()
 		}
 		return
