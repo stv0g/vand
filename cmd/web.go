@@ -26,7 +26,7 @@ func runWeb(cmd *cobra.Command, args []string) {
 		log.Fatalf("Failed to create MQTT client: %s", err)
 	}
 
-	topic := fmt.Sprintf("%s/#", cfg.Broker.Topic)
+	topic := fmt.Sprintf("%s/update", cfg.Broker.Topic)
 
 	store, err := store.NewStore(client, topic)
 	if err != nil {

@@ -20,6 +20,7 @@ func Run(cfg *config.Config, store *store.Store, version, commit, date string) {
 
 	router.GET(apiBase+"/config", handlers.HandleConfigWith(version, commit, date))
 	router.GET(apiBase+"/state", handlers.HandleStateWith(store))
+	router.GET(apiBase+"/ws", handlers.HandleWebsocketWith(store))
 
 	server := &http.Server{
 		Addr:           cfg.Web.Listen,
