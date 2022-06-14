@@ -36,7 +36,9 @@ jobs:
         npm --prefix frontend install
 
     - name: Build code
-      run: make build
+      run: |
+        make frontend
+        make backend
       
     - name: Run vet
       run: go vet --copylocks=false ./...

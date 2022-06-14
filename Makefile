@@ -15,7 +15,7 @@ all: run
 frontend:
 	npm --prefix frontend/ run-script build
 
-build:
+backend:
 	go build -tags embed_frontend -o $(TARGET) ./cmd/
 
 deploy: build
@@ -28,4 +28,4 @@ restart: deploy
 run: deploy
 	$(REMOTE) /usr/local/bin/$(TARGET) gps
 
-.PHONY: build run frontend
+.PHONY: backend frontend run deploy restart all
