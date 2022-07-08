@@ -18,7 +18,7 @@ frontend:
 backend:
 	go build -tags embed_frontend -o $(TARGET) ./cmd/
 
-deploy: build
+deploy: backend
 	rsync --progress $(TARGET) $(TARGET_HOST):/usr/local/bin/$(TARGET)
 	rsync --progress etc/vand.yaml $(TARGET_HOST):/etc/
 
