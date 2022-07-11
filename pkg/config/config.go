@@ -45,12 +45,13 @@ type Display struct {
 		Next  string `yaml:"next"`
 	}
 
-	Pages map[string]DisplayPage `yaml:"pages"`
+	Pages []DisplayPage `yaml:"pages"`
 }
 
 type DisplayPage struct {
-	Next string `yaml:"next"`
-	Over string `yaml:"over"`
+	ID     string `yaml:"id"`
+	NextID string `yaml:"next"`
+	OverID string `yaml:"over"`
 
 	Time            time.Duration   `yaml:"time"`
 	BackgroundColor color.Color     `yaml:"background-color"`

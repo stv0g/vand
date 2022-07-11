@@ -1,13 +1,15 @@
+//go:build !arm
+
 package display
 
 import (
 	"log"
 
-	"github.com/stv0g/vand/pkg/devices/display/mockup"
+	"github.com/stv0g/vand/pkg/devices/display/virtual"
 )
 
-func NewMockupDisplay() (*Display, error) {
-	dev, err := mockup.New()
+func NewVirtualDisplay() (*Display, error) {
+	dev, err := virtual.New()
 	if err != nil {
 		log.Fatalf("Failed to open display: %s", err)
 	}

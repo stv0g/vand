@@ -1,4 +1,4 @@
-package mockup
+package virtual
 
 import (
 	"fmt"
@@ -6,6 +6,7 @@ import (
 	"image/color"
 	"image/draw"
 	"log"
+	"os"
 
 	"gioui.org/app"
 	"gioui.org/io/system"
@@ -31,9 +32,9 @@ func New() (*Dev, error) {
 	d := &Dev{
 		window: app.NewWindow(
 			app.Title("vand"),
-			app.Size(unit.Px(2*Width), unit.Px(2*Height)),
-			app.MinSize(unit.Px(2*Width), unit.Px(2*Height)),
-			app.MaxSize(unit.Px(2*Width), unit.Px(2*Height)),
+			app.Size(unit.Dp(Width), unit.Dp(Height)),
+			app.MinSize(unit.Dp(Width), unit.Dp(Height)),
+			app.MaxSize(unit.Dp(Width), unit.Dp(Height)),
 		),
 		rect: image.Rectangle{
 			Max: image.Point{
@@ -44,8 +45,6 @@ func New() (*Dev, error) {
 	}
 
 	d.image = image.NewRGBA(d.rect)
-	blue := color.RGBA{0, 0, 255, 255}
-	draw.Draw(d.image, d.rect, &image.Uniform{blue}, image.ZP, draw.Src)
 
 	go d.loop()
 
@@ -60,7 +59,7 @@ func (d *Dev) loop() {
 		switch e := e.(type) {
 
 		case system.DestroyEvent:
-			panic(e.Err)
+			os.Exit(0)
 		case system.FrameEvent:
 			gtx := layout.NewContext(&ops, e)
 			layout.Center.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
@@ -75,7 +74,7 @@ func (d *Dev) loop() {
 }
 
 func (d *Dev) String() string {
-	return fmt.Sprintf("mockup.Dev{%s}", d.rect.Max)
+	return fmt.Sprintf("virtual.Dev{%s}", d.rect.Max)
 }
 
 // ColorModel implements display.Drawer.

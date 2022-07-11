@@ -1,12 +1,8 @@
-//go:build mockup
-
 package main
 
 import (
 	"fmt"
 	"log"
-
-	"gioui.org/app"
 
 	"github.com/spf13/cobra"
 	"github.com/stv0g/vand/pkg/display"
@@ -25,7 +21,7 @@ var displayCmd = &cobra.Command{
 }
 
 func runDisplay(cmd *cobra.Command, args []string) {
-	client, err := mqtt.NewClient(&cfg.Broker, "display-mockup", cfg.DataDir, true)
+	client, err := mqtt.NewClient(&cfg.Broker, "display", cfg.DataDir, true)
 	if err != nil {
 		log.Fatalf("Failed to create MQTT client: %s", err)
 	}
@@ -37,27 +33,15 @@ func runDisplay(cmd *cobra.Command, args []string) {
 		log.Fatal(err)
 	}
 
-	disp, err := display.NewMockupDisplay()
+	disp, err := display.NewDisplay(&cfg.Display)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	pages := map[string]*display.Page{}
-	for id, page := range cfg.Display.Pages {
-		pages[id] = &display.Page{DisplayPage: page}
+	pages, err := display.LoadPages(cfg.Display.Pages)
+	if err != nil {
+		log.Fatal(err)
 	}
-
-	for id, page := range pages {
-		if page.Next != "" {
-			page.next = pages[page.Next]
-		}
-
-		if page.Over != "" {
-			page.over = pages[page.Over]
-		}
-	}
-
-	log.Printf("Pages: %+#v", pages)
 
 	go func() {
 		if err := disp.Play(pages, store); err != nil {
@@ -70,5 +54,5 @@ func runDisplay(cmd *cobra.Command, args []string) {
 		// playGif(dev)
 	}()
 
-	app.Main()
+	select {}
 }

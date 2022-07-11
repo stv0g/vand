@@ -27,11 +27,20 @@ func NewDisplay(cfg *config.Display) (*Display, error) {
 	// defer spiPort.Close()
 
 	dcPin := gpioreg.ByName(cfg.Pins.DC)
-	resetPin := gpioreg.ByName(cfg.Pins.Reset)
-	nextPin := gpioreg.ByName(cfg.Pins.Next)
+	if dcPin == nil {
+		return nil, fmt.Errorf("failed to find dc pin")
+	}
 
-	if err := nextPin.In(gpio.PullUp, gpio.FallingEdge); err != nil {
-		return nil, fmt.Errorf("failed to setup input pin: %w", err)
+	resetPin := gpioreg.ByName(cfg.Pins.Reset)
+	if resetPin == nil {
+		return nil, fmt.Errorf("failed to find reset pin")
+	}
+
+	nextPin := gpioreg.ByName(cfg.Pins.Next)
+	if nextPin != nil {
+		if err := nextPin.In(gpio.PullUp, gpio.FallingEdge); err != nil {
+			return nil, fmt.Errorf("failed to setup input pin")
+		}
 	}
 
 	dev, err := ssd1351.NewSPI(spiPort, dcPin, resetPin)
@@ -46,6 +55,10 @@ func NewDisplay(cfg *config.Display) (*Display, error) {
 }
 
 func waitForEdge(pin gpio.PinIO) chan struct{} {
+	if pin == nil {
+		return nil
+	}
+
 	ch := make(chan struct{})
 
 	go func() {

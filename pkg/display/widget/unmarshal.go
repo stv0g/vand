@@ -2,10 +2,11 @@ package widget
 
 import (
 	"fmt"
+	"image/color"
 	"reflect"
 
 	"github.com/mitchellh/mapstructure"
-	"github.com/tdewolff/canvas"
+	"golang.org/x/image/colornames"
 )
 
 // Decode takes an input structure and uses reflection to translate it to
@@ -32,6 +33,26 @@ func DecodeHookFunc() mapstructure.DecodeHookFunc {
 	)
 }
 
+func parseHexColor(s string) (c color.RGBA, err error) {
+	c.A = 0xff
+
+	switch len(s) {
+	case 7:
+		_, err = fmt.Sscanf(s, "#%02x%02x%02x", &c.R, &c.G, &c.B)
+	case 4:
+		_, err = fmt.Sscanf(s, "#%1x%1x%1x", &c.R, &c.G, &c.B)
+		// Double the hex digits:
+		c.R *= 17
+		c.G *= 17
+		c.B *= 17
+	default:
+		err = fmt.Errorf("invalid length, must be 7 or 4")
+
+	}
+
+	return
+}
+
 func colorDecodeHook(
 	f reflect.Type,
 	t reflect.Type,
@@ -40,7 +61,22 @@ func colorDecodeHook(
 		return data, nil
 	}
 
-	return canvas.Red, nil
+	colorStr := data.(string)
+	if colorStr == "" {
+		colorStr = "black"
+	}
+
+	// Parse hex colors
+	if colorStr[0] == '#' {
+		return parseHexColor(colorStr)
+	}
+
+	col, ok := colornames.Map[colorStr]
+	if !ok {
+		return nil, fmt.Errorf("unknown color name: %s", colorStr)
+	}
+
+	return col, nil
 }
 
 func widgetDecodeHook(
