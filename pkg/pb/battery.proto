@@ -2,24 +2,33 @@ syntax = "proto3";
 
 option go_package = "github.com/stv0g/vand/pkg/pb";
 
+message BatteryConfig {
+	uint32 production_year = 1;
+	uint32 production_month = 2;
+	uint32 production_day = 3;
+	
+	uint32 software_version = 4;
+	uint32 cell_count = 5;
+	uint32 ntc_count = 6;
+
+	string device_name = 7;
+}
+
 message BatteryState {
-	float soc = 1;
+	float pack_voltage = 1;
+	float pack_current = 2;
 
-	float pack_voltage = 2;
-	float pack_current = 3;
+	uint32 errors = 3;
+	uint32 balancing = 4;
+	
+	repeated float voltages = 5;
+	repeated float temperatures = 6;
 
-	uint32 errors = 4;
-	uint32 balancing = 5;
-	float voltages = 6;
-	float temperatures = 7;
+	float cycle_capacity = 7;
+	float design_capacity = 8;
 
-	float cycle_capacity = 8;
-	float design_capacity = 9;
+	uint32 cycle_count = 9;
 
-	uint32 cycle_cnt = 10;
-	uint32 cell_cnt = 11;
-	uint32 ntc_cnt = 12;
-
-	bool charge_fet_en = 13;
-	bool discharge_fet_en = 14;
+	bool charge_fet_enable = 10;
+	bool discharge_fet_enable = 11;
 }
