@@ -94,8 +94,6 @@ func widgetDecodeHook(
 		return nil, err
 	}
 
-	fmt.Printf("unmarshaling widget: %s\n", base.Type)
-
 	var widget Widget
 
 	switch base.Type {
