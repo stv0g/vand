@@ -1,0 +1,921 @@
+{
+    "custom": {
+        "lastWifiChan": 13,
+        "dsaLocalUrl": "https://mywebui:443/dsa",
+        "hiddenMenuEnabled": false,
+        "hideAdminPassword": false,
+        "carrierSim": "Unknown"
+    },
+    "webd": {
+        "adminPassword": "****************",
+        "ownerModeEnabled": false,
+        "hideAdminPassword": true,
+        "hintAnswer": "",
+        "hintNumber": 0,
+        "ownerCustomizationsChanged": false,
+        "ownerCustomizationsList": [
+            {}
+        ]
+    },
+    "lcd": {
+        "backlightEnabled": true,
+        "backlightActive": false,
+        "inactivityTimer": 60,
+        "inactivityTimerAC": 60,
+        "inactivityTimerUSB": 60,
+        "brightnessOnBatt": "Bright",
+        "brightnessOnUSB": "Bright",
+        "brightnessOnAC": "Bright",
+        "brightnessOnBattIntVal": 5,
+        "brightnessOnUSBIntVal": 5,
+        "brightnessOnACIntVal": 5,
+        "backlightOverride": "Off",
+        "lockScreenEnable": false,
+        "lockScreenUsePin": false
+    },
+    "led": {},
+    "sim": {
+        "pin": {
+            "mode": "Disabled",
+            "retry": 3
+        },
+        "puk": {
+            "retry": 10
+        },
+        "mep": {},
+        "phoneNumber": "",
+        "iccid": "89492028217XXXXXXXXX",
+        "imsi": "262022XXXXXXXXX",
+        "SPN": "",
+        "status": "Ready",
+        "sprintSimLock": 0
+    },
+    "sms": {
+        "ready": true,
+        "sendSupported": true,
+        "sendEnabled": true,
+        "unreadMsgs": 7,
+        "alertSupported": false,
+        "alertEnabled": false,
+        "alertNumList": "",
+        "msgCount": 2,
+        "msgs": [
+            {
+                "id": "2",
+                "rxTime": "06/30/22 08:43:41 AM",
+                "text": "Liebe Vodafone-Kundin, lieber Vodafone-Kunde, willkommen in Dänemark! Sie simsen und telefonieren  im EU-Ausland ohne Aufpreis wie zuhause. Mit Ihrer GigaKombi Unlimited Option können Sie hier sorgenfrei in IhremRed M Tarif mit 34 GB, in Ihrem Red L Tarif mit 54 GB surfen. Aktivieren Sie Roaming jetzt ganz einfach in Ihren Smartphone-Einstellungen. EU-Roaming ist nur für vorübergehende Reisen inklusive. Gut zu wissen: Anrufe in Länder außerhalb der EU sind kein EU-Roaming und werden berechnet. Das gilt auch für Anrufe zu Sonderrufnummern und dauerhafte Rufumleitungen ins EU-Ausland. Mehr Infos auf www.vodafone.de/eu-regulierung oder kostenlos unter +4917212220. Kostenloser EU-Notruf: 112. Wir wünschen eine gute Reise. Freundliche Grüße, Ihr Vodafone-Team",
+                "sender": "70127"
+            },
+            {
+                "id": "1",
+                "rxTime": "06/29/22 08:46:21 PM",
+                "text": "Liebe Vodafone-Kundin, lieber Vodafone-Kunde, willkommen in Schweden! Sie simsen und telefonieren  im EU-Ausland ohne Aufpreis wie zuhause. Mit Ihrer GigaKombi Unlimited Option können Sie hier sorgenfrei in IhremRed M Tarif mit 27 GB, in Ihrem Red L Tarif mit 47 GB surfen. Aktivieren Sie Roaming jetzt ganz einfach in Ihren Smartphone-Einstellungen. EU-Roaming ist nur für vorübergehende Reisen inklusive. Gut zu wissen: Anrufe in Länder außerhalb der EU sind kein EU-Roaming und werden berechnet. Das gilt auch für Anrufe zu Sonderrufnummern und dauerhafte Rufumleitungen ins EU-Ausland. Mehr Infos auf www.vodafone.de/eu-regulierung oder kostenlos unter +4917212220. Kostenloser EU-Notruf: 112. Wir wünschen eine gute Reise. Freundliche Grüße, Ihr Vodafone-Team",
+                "sender": "70127"
+            },
+            {}
+        ],
+        "trans": [
+            {}
+        ],
+        "sendMsg": [
+            {}
+        ]
+    },
+    "session": {
+        "userRole": "Admin",
+        "lang": "en",
+        "hintDisplayPassword": "",
+        "secToken": "Wh80g6LXDIQL3UwSuvNXXXXXXXXXX",
+        "clientIP": "172.23.156.130",
+        "supportedLangList": [
+            {
+                "id": "en",
+                "isCurrent": true,
+                "label": "English"
+            },
+            {
+                "id": "ar_AR",
+                "label": "العربية (Arabic)"
+            },
+            {
+                "id": "de_DE",
+                "label": "Deutsch (German)"
+            },
+            {
+                "id": "es_ES",
+                "label": "Español (Spanish)"
+            },
+            {
+                "id": "fr_FR",
+                "label": "Français (French)"
+            },
+            {
+                "id": "it_IT",
+                "label": "Italiano (Italian)"
+            },
+            {
+                "id": "nl_NL",
+                "label": "Nederlands (Dutch)"
+            },
+            {
+                "id": "no_NO",
+                "label": "Norsk (Norwegian)"
+            },
+            {
+                "id": "pl_PL",
+                "label": "Polski (Polish)"
+            },
+            {
+                "id": "fi_FI",
+                "label": "Suomi (Finnish)"
+            },
+            {
+                "id": "sv_SE",
+                "label": "Svenska (Swedish)"
+            },
+            {
+                "id": "tu_TU",
+                "label": "Türkçe (Turkish)"
+            },
+            {}
+        ]
+    },
+    "general": {
+        "defaultLanguage": "en",
+        "PRIid": "23114633",
+        "activationDate": "0",
+        "genericResetStatus": "NotStarted",
+        "reconditionDate": "0",
+        "manufacturer": "Netgear, Incorporated",
+        "model": "MR5200",
+        "HWversion": "1.3",
+        "FWversion": "NTGX55_12.04.12.00",
+        "modemFwVersion": "MPSS.HI.2.0.c3.5-00010-SDX55_CPEALL_PACK-1.403198.3",
+        "buildDate": "2021/08/19",
+        "BLversion": "NTGX55_12.04.12.00",
+        "PRIversion": "04.05",
+        "truInstallAvailable": false,
+        "truInstallVersion": "",
+        "IMEI": "3540XXXXXXXXX",
+        "SVN": "9",
+        "MEID": "",
+        "ESN": "XXXXXXXXX",
+        "FSN": "6B2XXXXXXXXX",
+        "ATTDeviceId": "",
+        "packageName": "MR5200-100EUS_NTGX55_12.04.12.00_Generic_04.05",
+        "activated": true,
+        "webAppVersion": "MR5200-100EUS_04.02.196.00\n",
+        "appVersion": "",
+        "HIDenabled": false,
+        "truInstallEnabled": false,
+        "truInstallSupported": false,
+        "TCAaccepted": true,
+        "LEDenabled": true,
+        "showAdvHelp": true,
+        "showWebInfo": true,
+        "keyLockState": "Locked",
+        "devTemperature": 57,
+        "verMajor": 43,
+        "verMinor": 0,
+        "environment": "Target",
+        "currTime": 1342111628,
+        "timeZoneOffset": 7200,
+        "userTzOffsetEnabled": false,
+        "userTzOffset": 0,
+        "deviceName": "Nighthawk M5",
+        "useMetricSystem": true,
+        "factoryResetButtonEnabled": true,
+        "factoryResetLCDSupported": true,
+        "factoryResetStatus": "NotStarted",
+        "SPClockStatus": "SPCLocked",
+        "setupCompleted": true,
+        "warrantyDateCode": "",
+        "languageSelected": true,
+        "uiDateFormat": "MMDDYYYY",
+        "upTime": 722737,
+        "use24HrTimeFormat": false,
+        "systemAlertList": {
+            "list": [
+                {},
+                {}
+            ],
+            "count": 1
+        },
+        "apiVersion": "2.0",
+        "companyName": "NETGEAR",
+        "usbDevicesURL": "/Forms/readyshareUsbDevicesInfo",
+        "nwFoldersURL": "/Forms/readyshareNWFoldersInfo",
+        "configURL": "/Forms/config",
+        "profileURL": "/Forms/profile",
+        "pinChangeURL": "/Forms/pinChange",
+        "portCfgURL": "/Forms/portCfg",
+        "portFilterURL": "/Forms/portFilter",
+        "wifiACLURL": "/Forms/wifiACL",
+        "supportedLangList": [
+            {
+                "id": "en",
+                "isCurrent": "true",
+                "isDefault": "true",
+                "label": "English",
+                "token1": "/romfs/lcd/en.tr"
+            },
+            {
+                "id": "ar_AR",
+                "isCurrent": "false",
+                "isDefault": "false",
+                "label": "العربية (Arabic)",
+                "token1": "/romfs/lcd/ar_AR.tr"
+            },
+            {
+                "id": "de_DE",
+                "isCurrent": "false",
+                "isDefault": "false",
+                "label": "Deutsch (German)",
+                "token1": "/romfs/lcd/de_DE.tr"
+            },
+            {
+                "id": "es_ES",
+                "isCurrent": "false",
+                "isDefault": "false",
+                "label": "Español (Spanish)",
+                "token1": "/romfs/lcd/es_ES.tr"
+            },
+            {
+                "id": "fr_FR",
+                "isCurrent": "false",
+                "isDefault": "false",
+                "label": "Français (French)",
+                "token1": "/romfs/lcd/fr_FR.tr"
+            },
+            {
+                "id": "it_IT",
+                "isCurrent": "false",
+                "isDefault": "false",
+                "label": "Italiano (Italian)",
+                "token1": "/romfs/lcd/it_IT.tr"
+            },
+            {
+                "id": "nl_NL",
+                "isCurrent": "false",
+                "isDefault": "false",
+                "label": "Nederlands (Dutch)",
+                "token1": "/romfs/lcd/nl_NL.tr"
+            },
+            {
+                "id": "no_NO",
+                "isCurrent": "false",
+                "isDefault": "false",
+                "label": "Norsk (Norwegian)",
+                "token1": "/romfs/lcd/no_NO.tr"
+            },
+            {
+                "id": "pl_PL",
+                "isCurrent": "false",
+                "isDefault": "false",
+                "label": "Polski (Polish)",
+                "token1": "/romfs/lcd/pl_PL.tr"
+            },
+            {
+                "id": "fi_FI",
+                "isCurrent": "false",
+                "isDefault": "false",
+                "label": "Suomi (Finnish)",
+                "token1": "/romfs/lcd/fi_FI.tr"
+            },
+            {
+                "id": "sv_SE",
+                "isCurrent": "false",
+                "isDefault": "false",
+                "label": "Svenska (Swedish)",
+                "token1": "/romfs/lcd/sv_SE.tr"
+            },
+            {
+                "id": "tu_TU",
+                "isCurrent": "false",
+                "isDefault": "false",
+                "label": "Türkçe (Turkish)",
+                "token1": "/romfs/lcd/tu_TU.tr"
+            },
+            {}
+        ]
+    },
+    "power": {
+        "PMState": "Online",
+        "SmState": "Online",
+        "battLowThreshold": 15,
+        "autoOff": {
+            "onUSBdisconnect": {
+                "enable": false,
+                "countdownTimer": 0
+            },
+            "onIdle": {
+                "timer": {
+                    "onAC": 0,
+                    "onBattery": 0
+                }
+            }
+        },
+        "standby": {
+            "ethernet": {
+                "timer": {
+                    "onBattery": 120
+                }
+            },
+            "onIdle": {
+                "timer": {
+                    "onAC": 0,
+                    "onBattery": 2400,
+                    "onUSB": 0
+                }
+            }
+        },
+        "autoOn": {
+            "enable": true
+        },
+        "batteryTemperature": 54,
+        "batteryVoltage": 4126,
+        "battChargeLevel": 92,
+        "battChargeSource": "PC",
+        "batteryState": "Normal",
+        "battChargeAlgorithm": "Heat",
+        "charging": false,
+        "buttonHoldTime": 268435455,
+        "deviceTempCritical": false,
+        "resetreason": 1,
+        "resetRequired": "NoResetRequired",
+        "choiceOnUsb": "NoAction",
+        "actionOnUsb": "ChargeOnly",
+        "batteryTempState": "Hot",
+        "batteryName": "W20",
+        "wifiOff": {
+            "onUsbConnect": false,
+            "onTethered": false
+        },
+        "boost": {
+            "cableConnected": false
+        },
+        "lpm": false
+    },
+    "wwan": {
+        "prlVersion": 0,
+        "bandDisablementMaskLTE": "0000000000000000",
+        "bandDisablementMask": "0000000000000000",
+        "LTEBandPriority": "0",
+        "netScanStatus": "NotStarted",
+        "mtuSize": 1500,
+        "mtuChangeEnabled": false,
+        "LTEeHRPDConfig": "NotForcedLTEAndeHRPDEnabled",
+        "roamingEnhancedIndicator": 0,
+        "roamingMode": "HomeOnly",
+        "roamingGuardDom": "NotForcedDisabled",
+        "roamingGuardIntl": "NotForcedDisabled",
+        "roamingType": "Home",
+        "roamMenuDisplay": false,
+        "ERITestMode": false,
+        "autoBandRegionChanged": false,
+        "inactivityCause": 3042,
+        "currentNWserviceType": "LteService",
+        "registerRejectCode": -1,
+        "netSelEnabled": "Enabled",
+        "netRegMode": "Auto",
+        "roaming": false,
+        "IPv6": "2a00:0020:0040:1287:ffff:ffff:ffff:ffff",
+        "IP": "100.107.214.43",
+        "registerNetworkDisplay": "vodafone.de",
+        "RAT": "Auto",
+        "bandRegion": [
+            {
+                "name": "All",
+                "current": true
+            },
+            {
+                "index": 1,
+                "name": "WCDMA All"
+            },
+            {
+                "index": 2,
+                "name": "LTE All"
+            },
+            {
+                "index": 3,
+                "name": "LTE and NR5G"
+            },
+            {}
+        ],
+        "autoconnect": "Always",
+        "profileList": [
+            {
+                "index": 1,
+                "id": "Gigacube",
+                "name": "Gigacube",
+                "apn": "home.vodafone.de",
+                "authtype": "None",
+                "ipaddr": "0.0.0.0",
+                "type": "IPV4",
+                "pdproamingtype": "IPV4"
+            },
+            {
+                "index": 2,
+                "id": "Vodafone",
+                "name": "Vodafone",
+                "apn": "web.vodafone.de",
+                "username": "vodafone",
+                "authtype": "None",
+                "ipaddr": "0.0.0.0",
+                "type": "IPV4V6",
+                "pdproamingtype": "IPV4V6"
+            },
+            {}
+        ],
+        "profile": {
+            "default": "Vodafone",
+            "defaultLTE": "Vodafone",
+            "promptForApnSelection": false
+        },
+        "promptForPwd": "Disabled",
+        "dataUsage": {
+            "total": {
+                "lteBillingTx": 0,
+                "lteBillingRx": 0,
+                "cdmaBillingTx": 0,
+                "cdmaBillingRx": 0,
+                "gwBillingTx": 0,
+                "gwBillingRx": 0,
+                "lteLifeTx": 0,
+                "lteLifeRx": 0,
+                "cdmaLifeTx": 0,
+                "cdmaLifeRx": 0,
+                "gwLifeTx": 0,
+                "gwLifeRx": 0
+            },
+            "server": {
+                "accountType": "",
+                "subAccountType": ""
+            },
+            "remote": {
+                "enabled": true
+            },
+            "serverDataRemaining": 0,
+            "serverDataTransferred": 0,
+            "serverDataTransferredIntl": 0,
+            "serverDataValidState": "Invalid",
+            "serverDaysLeft": 0,
+            "serverErrorCode": "",
+            "serverLowBalance": false,
+            "serverMsisdn": "",
+            "serverRechargeUrl": "",
+            "dataWarnEnable": false,
+            "planSize": 0,
+            "planDescription": "",
+            "prepaidStackedPlans": 0,
+            "prepaidStackedPlansIntl": 0,
+            "prepaidAccountState": "Hot",
+            "accountType": "Unknown",
+            "disableAutoReset": false,
+            "share": {
+                "enabled": false,
+                "dataTransferredOthers": 0,
+                "lastSync": "0"
+            },
+            "generic": {
+                "dataLimitValid": true,
+                "usageHighWarning": 0,
+                "fallbackSupported": false,
+                "lastSucceeded": "0",
+                "billingDay": 1,
+                "nextBillingDate": "1343340000",
+                "lastSync": "0",
+                "billingCycleRemainder": 14,
+                "billingCycleLimit": 107374182400,
+                "dataTransferred": 5923386493,
+                "dataTransferredRoaming": 730359820,
+                "lastReset": "0",
+                "userDisplayFormat": "BillingCycle"
+            }
+        },
+        "dataTransferred": {
+            "totalb": "591548786",
+            "rxb": "427999464",
+            "txb": "163549322"
+        },
+        "netManualNoCvg": false,
+        "connection": "Connected",
+        "connectionType": "IPv4AndIPv6",
+        "currentPSserviceType": "LTE",
+        "ca": {
+            "SCCcount": 1,
+            "SCClist": [
+                {},
+                {}
+            ]
+        },
+        "connectionText": "4G+",
+        "sessDuration": 443905,
+        "sessStartTime": 1341667723,
+        "signalStrength": {
+            "rssi": -82,
+            "rscp": 0,
+            "ecio": 0,
+            "rsrp": -109,
+            "rsrq": -10,
+            "bars": 3,
+            "sinr": 8
+        },
+        "diagInfo": [
+            {
+                "lteAttached": true,
+                "endcEnabledConfig": true,
+                "ltesigValid": true,
+                "ltesigRssi": "-78 dBm",
+                "ltesigRsrp": "-108 dBm",
+                "ltesigRsrq": "-9 dB",
+                "ltesigSnr": "12 dB",
+                "nr5gsigValid": true,
+                "nr5gsigRsrp": "-32768 dBm",
+                "nr5gsigRsrq": "-32768 dB",
+                "nr5gsigSnr": "-3276 dB"
+            },
+            {}
+        ],
+        "lteBandInfo": [
+            {
+                "isPcc": true,
+                "band": 1,
+                "channel": "100",
+                "phyCid": "170",
+                "dlBandwidth": "20MHz",
+                "sccUlCaEnabled": "false",
+                "sccUlBandwidth": "0"
+            },
+            {
+                "sccId": 1,
+                "sccState": 1,
+                "band": 3,
+                "channel": "1801",
+                "phyCid": "88",
+                "dlBandwidth": "20MHz",
+                "sccUlCaEnabled": "true",
+                "sccUlChannel": 19801,
+                "sccUlBandwidth": "100"
+            },
+            {}
+        ],
+        "laa": {
+            "supported": false,
+            "enabled": false
+        }
+    },
+    "wwanadv": {
+        "curBand": "LTE B1",
+        "radioQuality": 38,
+        "country": "DEU",
+        "RAC": 0,
+        "LAC": 46454,
+        "MCC": "262",
+        "MNC": "02",
+        "MNCFmt": 2,
+        "cellId": 53532180,
+        "chanId": 100,
+        "primScode": -1,
+        "plmnSrvErrBitMask": 0,
+        "chanIdUl": 18100,
+        "txLevel": 13,
+        "rxLevel": -109
+    },
+    "ethernet": {
+        "mac": "8C-3B-A0-ff-ff-ff",
+        "offload": {
+            "supported": true,
+            "enabled": false,
+            "on": false,
+            "ipv4Addr": "0.0.0.0",
+            "ipv6Addr": "0000:0000:0000:0000:0000:0000:0000:0000",
+            "rx": 0,
+            "tx": 0,
+            "timeOn": 0
+        }
+    },
+    "wifi": {
+        "supported": "PrimaryGuestAux",
+        "enabled": true,
+        "status": "On",
+        "mode": "M802_11_BGNAX",
+        "maxClientSupported": 32,
+        "maxClientLimit": 32,
+        "maxClientCnt": 32,
+        "encryption": "WPA2_Personal_AES",
+        "channel": 0,
+        "2gBandwidth": "HT20",
+        "5gBandwidth": "VHT80",
+        "txPower": "Long",
+        "hiddenSSID": false,
+        "passPhrase": "simmerschonda?",
+        "passwordReminder": true,
+        "RTSthreshold": 2347,
+        "fragThreshold": 2346,
+        "accessControl": "None",
+        "SSID": "Wanderlust",
+        "wmmEnabled": true,
+        "MAC": "9C-C9-EB-ff-ff-ff",
+        "SSIDreminder": true,
+        "clientCount": 4,
+        "country": "FR",
+        "privacy": false,
+        "2gMcsChanList": "1 2 3 4 5 6 7 8 9 10 11 12 13",
+        "5gMcsChanList": "36 40 44 48 149 153 157 161 165",
+        "wps": {
+            "supported": "Both",
+            "enabled": "Disabled",
+            "blocked": false,
+            "mode": "PBC",
+            "status": "Succeeded"
+        },
+        "guest": {
+            "maxClientCnt": 31,
+            "enabled": true,
+            "status": "On",
+            "encryption": "WPA2_Personal_AES",
+            "SSID": "Wanderlust",
+            "passPhrase": "simmerschonda?",
+            "generatePassphrase": true,
+            "accessProfile": "Full",
+            "hiddenSSID": false,
+            "timerEnable": false,
+            "timerTimestamp": 0,
+            "timerValue": 3600,
+            "privacy": false,
+            "chan": 0,
+            "mode": "M802_11_ANAX",
+            "DHCP": {
+                "range": {
+                    "high": "192.168.2.99",
+                    "low": "192.168.2.20"
+                }
+            }
+        },
+        "aux": {
+            "enabled": true,
+            "AuxMode": "Station",
+            "SSID": "Wanderlust-Guest",
+            "hiddenSSID": false,
+            "encryption": "WPA2_Personal_AES",
+            "passPhrase": "simmerschonda?",
+            "maxClientCnt": 10,
+            "status": "Off",
+            "chan": 0,
+            "mode": "M802_11_BGNAX"
+        },
+        "offload": {
+            "activationRequired": false,
+            "bars": 0,
+            "enabled": false,
+            "rssi": 0,
+            "securityStatus": "Disconnected",
+            "status": "Off",
+            "supported": true,
+            "connectionSsid": "",
+            "scanProgress": "Idle",
+            "stationIPv4": "0.0.0.0",
+            "timeOn": 0,
+            "dataTransferred": {
+                "rx": 0,
+                "tx": 0
+            },
+            "networkList": [
+                {},
+                {}
+            ],
+            "scanList": [
+                {}
+            ]
+        },
+        "accessBlackList": {
+            "list": [
+                {}
+            ],
+            "count": 0
+        },
+        "accessWhiteList": {
+            "list": [
+                {}
+            ],
+            "count": 0
+        }
+    },
+    "router": {
+        "gatewayIP": "172.23.156.129",
+        "DMZaddress": "192.168.1.4",
+        "DMZenabled": false,
+        "forceSetup": false,
+        "DHCP": {
+            "serverEnabled": true,
+            "DNS1": "139.7.30.125",
+            "DNS2": "139.7.30.126",
+            "DNSmode": "Auto",
+            "USBpcIP": "172.23.156.132",
+            "range": {
+                "high": "172.23.156.158",
+                "low": "172.23.156.135"
+            }
+        },
+        "usbMode": "None",
+        "usbNetworkTethering": true,
+        "portFwdEnabled": false,
+        "usbTetheringActive": false,
+        "portFwdList": [
+            {}
+        ],
+        "portFwdAllowEntry": 50,
+        "portFilteringEnabled": false,
+        "portFilteringMode": "None",
+        "portFilterWhiteList": [
+            {}
+        ],
+        "portFilterBlackList": [
+            {}
+        ],
+        "clientList": {
+            "list": [
+                {
+                    "IP": "172.23.156.142",
+                    "MAC": "C6:09:54:ff:ff:ff",
+                    "name": "pax",
+                    "media": "WiFi",
+                    "source": "GuestAP"
+                },
+                {
+                    "IP": "0.0.0.0",
+                    "MAC": "E4:5F:01:ff:ff:ff",
+                    "media": "WiFi",
+                    "source": "PrimaryAP"
+                },
+                {
+                    "IP": "172.23.156.146",
+                    "MAC": "60:55:F9:ff:ff:ff",
+                    "name": "obd2",
+                    "media": "WiFi",
+                    "source": "PrimaryAP"
+                },
+                {
+                    "IP": "172.23.156.156",
+                    "MAC": "60:55:F9:ff:ff:ff",
+                    "name": "pv",
+                    "media": "WiFi",
+                    "source": "PrimaryAP"
+                },
+                {}
+            ],
+            "count": 4
+        },
+        "hostName": "mywebui",
+        "domainName": "net",
+        "ipPassThroughEnabled": false,
+        "ipPassThroughSupported": true,
+        "VPNpassthrough": true,
+        "usbTetherSupported": true,
+        "netMask": "255.255.255.224",
+        "bridgeLanNetMask": "255.255.255.255",
+        "Ipv6Supported": true,
+        "UPNPsupported": true,
+        "UPNPenabled": true,
+        "UPNPIgdVersion": 2
+    },
+    "fota": {
+        "fwupdater": {
+            "available": false,
+            "chkallow": true,
+            "chkstatus": "Initial",
+            "dloadProg": 0,
+            "error": false,
+            "lastChkDate": 1341829927,
+            "state": "NoNewFw",
+            "isPostponable": false,
+            "statusCode": 200,
+            "chkTimeLeft": 0,
+            "dloadSize": 0,
+            "isRejectable": false,
+            "description": ""
+        }
+    },
+    "failover": {
+        "enabled": false,
+        "backhaul": "ETH",
+        "supported": true,
+        "monitorPeriod": 60,
+        "wanConnected": true,
+        "keepaliveEnable": true,
+        "keepaliveSleep": 15,
+        "ipv4Targets": [
+            {
+                "id": "0",
+                "string": "8.8.8.8"
+            },
+            {}
+        ],
+        "ipv6Targets": [
+            {}
+        ]
+    },
+    "cradle": {
+        "mode": false,
+        "smartMode": false,
+        "url": "",
+        "primarySSID": "",
+        "primaryPassphrase": "",
+        "secondarySSID": "",
+        "secondaryPassphrase": "",
+        "autoIPT": false
+    },
+    "eventlog": {
+        "level": 0,
+        "logDuration": 0,
+        "catLevel": [
+            {
+                "category": "AccessWebUI"
+            },
+            {
+                "category": "RouterOperations"
+            },
+            {
+                "category": "PortFwdTrigger"
+            },
+            {
+                "category": "WirelessAccess"
+            },
+            {
+                "category": "CallStatus"
+            },
+            {
+                "category": "Startup"
+            },
+            {
+                "category": "OperatorSvc"
+            },
+            {
+                "category": "ConfigChange"
+            },
+            {}
+        ]
+    },
+    "ui": {
+        "serverDaysLeftHide": false,
+        "promptActivation": true,
+        "stealthEnabled": false,
+        "disableSettingsOnLCD": false
+    },
+    "accesscontrol": {
+        "nlpc": {
+            "filterLevel": "None",
+            "enabled": false,
+            "username": "",
+            "macList": [
+                {}
+            ]
+        },
+        "blocksites": {
+            "enabled": false,
+            "macMode": "Blacklist",
+            "macList": [
+                {}
+            ],
+            "patternMode": "Blacklist",
+            "patternList": [
+                {}
+            ]
+        },
+        "schedulerBlockingActive": false,
+        "schedulerSupported": true,
+        "schedulerEnabled": false,
+        "schedulerDefaultMode": "WwanOn",
+        "schedulerList": [
+            {}
+        ]
+    },
+    "ready": {
+        "shareSupported": false,
+        "shareEnabled": false,
+        "cloudSupported": false,
+        "cloudEnabled": false,
+        "deviceShare": {
+            "networkDeviceName": "readyshare",
+            "workgroupName": "workgroup",
+            "removeUsbDeviceResult": "None",
+            "extMediaSupported": false,
+            "usbDevicesInfo": [
+                {}
+            ],
+            "nwFoldersInfo": [
+                {}
+            ]
+        },
+        "cloud": {
+            "registrationStatus": "Unregistered"
+        }
+    },
+    "insight": {
+        "supported": true,
+        "enabled": true,
+        "active": false,
+        "version": "21.28.42.1"
+    }
+}
