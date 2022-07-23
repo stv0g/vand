@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 
@@ -63,7 +64,11 @@ func bridgeMessageHandler(clientCar pmqtt.Client, clientCloud pmqtt.Client, msg 
 
 		for key, value := range m {
 			topic := fmt.Sprintf("%s/flat/%s", cfg.BrokerCloud.Topic, key)
-			val := fmt.Sprintf("%v", value)
+			val, err := json.Marshal(value)
+			if err != nil {
+				log.Printf("Failed to marshal value: %s", err)
+			}
+
 			clientCloud.Publish(topic, 2, false, val)
 		}
 	} else {
