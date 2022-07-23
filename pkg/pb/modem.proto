@@ -12,46 +12,93 @@ message ModemState {
 			string country = 5;
 		}
 
-		string operator = 1;
+		message SignalStrength {
+			int32 rssi = 1;
+			int32 rscp = 2;
+			int32 ecio = 3;
+			int32 rsrp = 4;
+			int32 rsrq = 5;
+			int32 bars = 6;
+			int32 sinr = 7;
 
-		string connection_text = 2;
+			int32 quality = 9;
 
-		string register_network = 3;
+			int32 rx_level = 10;
+			int32 tx_level = 11;
+		}
 
-		int32 rx_level = 4;
-		int32 tx_level = 5;
+		message Session {
+			uint64 bytes_tx = 1;
+			uint64 bytes_rx = 2;
+			uint32 duration = 3;
+			uint32 start = 4;
+		}
 
-		bool roaming = 6;
+		Network network = 1;
 
-		string ipv4 = 7;
-		string ipv6 = 8;
+		string operator = 2;
 
-		uint32 mtu = 9;
+		string connection_text = 3;
 
+		string register_network = 4;
+
+		bool roaming = 7;
+
+		string ipv4 = 8;
+		string ipv6 = 9;
+
+		uint32 mtu = 10;
 		
-		uint32 radio_quality = 10;
+		uint32 radio_quality = 11;
 
-		string imsi = 11;
-		string imei = 12;
+		string imsi = 12;
+		string imei = 13;
+		string iccid = 14;
+
+		uint32 band = 15;
+		uint32 chan_id_dl = 16;
+		uint32 chan_id_ul = 17;
+		
+		bool connected = 18;
+
+		SignalStrength signal_strength = 19;
+	}
+
+	message Client {
+		string ipv4 = 1;
+		string mac = 2;
+		string name = 3;
+		string media = 4;
+		string source = 5;
 	}
 
 	message Wifi {
+		bool enabled = 1;
 
+		string ssid = 2;
+
+		uint32 client_count = 4;
+
+		uint32 channel = 5;
 	}
 
-	message Ethernet {
-
+	message Battery {
+		float temperature = 1;
+		float voltage = 2;
+		float soc = 3;
+		bool charging = 4;
 	}
 
-	message Power {
-
+	message SMS {
+		uint32 total_count = 1;
+		uint32 unread_count = 2;
 	}
 
 	WWAN wwan = 1;
 	Wifi wifi = 2;
-	Ethernet ethernet = 3;
-	Power power = 4;
+	Battery battery = 4;
+	SMS sms = 9;
 
 	string serial_number = 5;
-	uint64 data_transferred = 6;
-}
+	repeated Client clients = 7;
+	float temperature = 8;}

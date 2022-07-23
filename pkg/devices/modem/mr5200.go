@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/http/cookiejar"
 	"net/url"
+	"strconv"
 	"strings"
 
 	"github.com/stv0g/vand/pkg/pb"
@@ -548,10 +549,10 @@ type WWAN struct {
 			BillingDay             int    `json:"billingDay"`
 			NextBillingDate        string `json:"nextBillingDate"`
 			LastSync               string `json:"lastSync"`
-			BillingCycleRemainder  int    `json:"billingCycleRemainder"`
-			BillingCycleLimit      int    `json:"billingCycleLimit"`
-			DataTransferred        int    `json:"dataTransferred"`
-			DataTransferredRoaming int    `json:"dataTransferredRoaming"`
+			BillingCycleRemainder  int64  `json:"billingCycleRemainder"`
+			BillingCycleLimit      int64  `json:"billingCycleLimit"`
+			DataTransferred        int64  `json:"dataTransferred"`
+			DataTransferredRoaming int64  `json:"dataTransferredRoaming"`
 			LastReset              string `json:"lastReset"`
 			UserDisplayFormat      string `json:"userDisplayFormat"`
 		} `json:"generic"`
@@ -946,10 +947,87 @@ func (m *Modem) GetState() (*pb.ModemState, error) {
 		return nil, err
 	}
 
-	return &pb.ModemState{
+	atoi := func(s string) uint32 {
+		i, _ := strconv.Atoi(s)
+		return uint32(i)
+	}
+
+	b, _ := json.MarshalIndent(n, "", "  ")
+	fmt.Printf("%s\n", b)
+
+	s := &pb.ModemState{
 		Wwan: &pb.ModemState_WWAN{
-			Operator:       n.WWAN.Connection,
-			ConnectionText: n.WWAN.ConnectionText,
+			Network: &pb.ModemState_WWAN_Network{
+				Mcc:     atoi(n.WWANAdvanced.MCC),
+				Mnc:     atoi(n.WWANAdvanced.MNC),
+				Lac:     uint32(n.WWANAdvanced.LAC),
+				Cid:     uint32(n.WWANAdvanced.CellID),
+				Country: strings.ToLower(n.WWANAdvanced.Country),
+			},
+			SignalStrength: &pb.ModemState_WWAN_SignalStrength{
+				Rssi:    int32(n.WWAN.SignalStrength.RSSI),
+				Rscp:    int32(n.WWAN.SignalStrength.RSCP),
+				Ecio:    int32(n.WWAN.SignalStrength.ECIO),
+				Rsrp:    int32(n.WWAN.SignalStrength.RSRP),
+				Rsrq:    int32(n.WWAN.SignalStrength.RSRQ),
+				Bars:    int32(n.WWAN.SignalStrength.BARS),
+				Sinr:    int32(n.WWAN.SignalStrength.SINR),
+				Quality: int32(n.WWANAdvanced.RadioQuality),
+				RxLevel: int32(n.WWANAdvanced.RxLevel),
+				TxLevel: int32(n.WWANAdvanced.TxLevel),
+			},
+			RegisterNetwork: string(n.WWAN.RegisterNetworkDisplay),
+			ConnectionText:  n.WWAN.ConnectionText,
+
+			Roaming: n.WWAN.Roaming,
+
+			Ipv4: n.WWAN.IP,
+			Ipv6: n.WWAN.IPv6,
+
+			Mtu: uint32(n.WWAN.MTUSize),
+
+			Imsi:  n.SIM.IMSI,
+			Iccid: n.SIM.ICCID,
+			Imei:  n.General.IMEI,
+
+			Band:     uint32(n.WWAN.LTEBandInfo[0].Band),
+			ChanIdDl: uint32(n.WWANAdvanced.ChanID),
+			ChanIdUl: uint32(n.WWANAdvanced.ChanIDUl),
+
+			Connected: n.WWAN.Connection == "Connected",
 		},
-	}, nil
+		Wifi: &pb.ModemState_Wifi{
+			ClientCount: uint32(n.Wifi.ClientCount),
+			Enabled:     n.Wifi.Enabled,
+		},
+		Battery: &pb.ModemState_Battery{
+			Temperature: float32(n.Power.BatteryTemperature),
+			Voltage:     float32(n.Power.BatteryVoltage),
+			Soc:         float32(n.Power.BattChargeLevel),
+			Charging:    n.Power.Charging,
+		},
+		Sms: &pb.ModemState_SMS{
+			TotalCount:  uint32(n.SMS.MessageCount),
+			UnreadCount: uint32(n.SMS.UnreadMessages),
+		},
+		SerialNumber: n.General.FSN,
+		Clients:      []*pb.ModemState_Client{},
+		Temperature:  float32(n.General.DevTemperature),
+	}
+
+	for _, c := range n.Router.ClientList.List {
+		if c.Name == "" {
+			continue
+		}
+
+		s.Clients = append(s.Clients, &pb.ModemState_Client{
+			Ipv4:   c.IP,
+			Mac:    c.MAC,
+			Name:   c.Name,
+			Media:  strings.ToLower(c.Media),
+			Source: strings.ToLower(c.Source),
+		})
+	}
+
+	return s, nil
 }
