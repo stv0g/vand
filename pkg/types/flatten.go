@@ -2,11 +2,8 @@ package types
 
 import (
 	"reflect"
-	"strconv"
 	"strings"
 )
-
-var enumerables = map[reflect.Kind]bool{reflect.Slice: true, reflect.Array: true}
 
 // Flatten returns all keys and corresponding values of a struct in a one-level-deep map
 func Flatten(in interface{}, sep string) map[string]interface{} {
@@ -59,15 +56,6 @@ func appendValue(m map[string]interface{}, v reflect.Value, key string, sep stri
 	// Set empty key for non-struct types to the kind
 	if key == "" {
 		key = v.Kind().String()
-	}
-
-	// make 1 vs. 0 indexing configurable with tags?
-	if enumerables[v.Kind()] {
-		for i := 0; i < v.Len(); i++ {
-			sk := key + sep + strconv.Itoa(i)
-			m[sk] = v.Index(i).Interface()
-		}
-		return
 	}
 
 	m[key] = v.Interface()
