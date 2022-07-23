@@ -44,6 +44,7 @@ func runSolar(cmd *cobra.Command, args []string) {
 	}
 
 	tick := time.NewTicker(cfg.Solar.PollInterval)
+out:
 	for {
 		sts, err := d.GetState()
 		if err != nil {
@@ -59,7 +60,7 @@ func runSolar(cmd *cobra.Command, args []string) {
 
 		select {
 		case <-termSig:
-			break
+			break out
 
 		case <-updateSig:
 		case <-tick.C:
