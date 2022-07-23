@@ -36,6 +36,12 @@ type Solar struct {
 	PollInterval time.Duration `yaml:"poll_interval"`
 }
 
+type Battery struct {
+	Address string `yaml:"address"`
+
+	PollInterval time.Duration `yaml:"poll_interval"`
+}
+
 type Display struct {
 	Port string `yaml:"port"`
 
@@ -107,6 +113,7 @@ type Config struct {
 	GPS         GPS         `yaml:"gps"`
 	Car         Car         `yaml:"car"`
 	Solar       Solar       `yaml:"solar"`
+	Battery     Battery     `yaml:"battery"`
 	Environment Environment `yaml:"env"`
 	Modem       Modem       `yaml:"modem"`
 }
@@ -146,6 +153,11 @@ func NewConfig(configFile string) (*Config, error) {
 	cfg.SetDefault("gps.port", "/dev/serial0")
 	cfg.SetDefault("gps.min_interval", "15m")
 	cfg.SetDefault("gps.min_distance", 100.0)
+
+	cfg.SetDefault("car.poll_interval", 60*time.Second)
+	cfg.SetDefault("modem.poll_interval", 60*time.Second)
+	cfg.SetDefault("solar.poll_interval", 60*time.Second)
+	cfg.SetDefault("battery.poll_interval", 60*time.Second)
 
 	replacer := strings.NewReplacer(".", "_")
 	cfg.SetEnvKeyReplacer(replacer)

@@ -12,6 +12,9 @@ message BatteryConfig {
 	uint32 ntc_count = 6;
 
 	string device_name = 7;
+	string serial_number = 8;
+	string model = 9;
+	string barcode = 10;
 }
 
 message BatteryState {
@@ -31,4 +34,6 @@ message BatteryState {
 
 	bool charge_fet_enable = 10;
 	bool discharge_fet_enable = 11;
+
+	uint32 soc = 12;
 }
