@@ -10,7 +10,7 @@
             "request": "launch",
             "mode": "auto",
             "program": "./cmd/",
-	    "buildFlags": "-tags=mockup",
+	    "buildFlags": "-tags=virtual",
 	    "args": [
 		    "display",
 		    "--config", "/Users/stv0g/workspace/bus/vand/etc/vand-local.yaml"
