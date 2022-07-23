@@ -34,6 +34,10 @@ func runModem(cmd *cobra.Command, args []string) {
 		log.Fatal(err)
 	}
 
+	if err := modem.Login(); err != nil {
+		log.Fatalf("Failed to login: %s", err)
+	}
+
 	tick := time.NewTicker(cfg.Modem.PollInterval)
 	for {
 		sts, err := modem.GetState()
