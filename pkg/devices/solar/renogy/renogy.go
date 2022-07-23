@@ -1,12 +1,14 @@
 package renogy
 
 import (
+	"errors"
 	"fmt"
 	"strings"
 	"time"
 
 	"github.com/simonvetter/modbus"
 	"github.com/stv0g/vand/pkg/pb"
+	"golang.org/x/sys/unix"
 )
 
 type Device struct {
@@ -83,6 +85,15 @@ func (d *Device) GetState() (*pb.SolarState, error) {
 	var off uint16 = 0x100
 	regs, err := d.client.ReadRegisters(off, 0x23, modbus.HOLDING_REGISTER)
 	if err != nil {
+		if errors.Is(err, unix.EPIPE) {
+			// Try to reopen socket
+			if err := d.client.Open(); err != nil {
+				return nil, err
+			}
+
+			regs, err = d.client.ReadRegisters(off, 0x23, modbus.HOLDING_REGISTER)
+		}
+
 		return nil, err
 	}
 
