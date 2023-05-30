@@ -4,7 +4,7 @@
 package display
 
 import (
-	"io/ioutil"
+	"io"
 
 	"github.com/tdewolff/canvas"
 
@@ -21,7 +21,10 @@ func init() {
 		panic(err)
 	}
 
-	b, err := ioutil.ReadAll(f)
+	b, err := io.ReadAll(f)
+	if err != nil {
+		panic(err)
+	}
 
 	if err := fontFamily.LoadFont(b, 0, canvas.FontRegular); err != nil {
 		panic(err)

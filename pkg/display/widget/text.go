@@ -35,7 +35,9 @@ func (w *Text) Init() error {
 	}
 
 	ff := canvas.NewFontFamily("ff")
-	ff.LoadLocalFont(w.Font, canvas.FontRegular)
+	if err := ff.LoadLocalFont(w.Font, canvas.FontRegular); err != nil {
+		return fmt.Errorf("failed to load font: %w", err)
+	}
 
 	w.fontFace = ff.Face(w.Size, w.Color, canvas.FontRegular, canvas.FontNormal)
 

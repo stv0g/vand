@@ -9,11 +9,9 @@ require (
 	gioui.org v0.0.0-20230526230622-e3ef98dda382
 	github.com/adrianmo/go-nmea v1.8.0
 	github.com/dgraph-io/badger/v3 v3.2103.5
-	github.com/dgraph-io/badger/v4 v4.1.0
 	github.com/eclipse/paho.mqtt.golang v1.4.2
 	github.com/gin-contrib/static v0.0.1
 	github.com/gin-gonic/gin v1.9.1
-	github.com/golang/protobuf v1.5.3
 	github.com/gorilla/websocket v1.5.0
 	github.com/imdario/mergo v0.3.16
 	github.com/mitchellh/mapstructure v1.5.0
@@ -28,7 +26,6 @@ require (
 	golang.org/x/sys v0.9.0
 	google.golang.org/protobuf v1.30.0
 	gopkg.in/yaml.v2 v2.4.0
-	gopkg.in/yaml.v3 v3.0.1
 	periph.io/x/conn/v3 v3.7.0
 	periph.io/x/host/v3 v3.8.2
 )
@@ -63,6 +60,7 @@ require (
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/golang/glog v1.1.1 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
+	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/flatbuffers v23.5.26+incompatible // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
@@ -95,6 +93,7 @@ require (
 	golang.org/x/sync v0.2.0 // indirect
 	golang.org/x/text v0.10.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 	star-tex.org/x/tex v0.4.0 // indirect
 )
 

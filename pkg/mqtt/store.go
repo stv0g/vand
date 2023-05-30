@@ -38,7 +38,10 @@ func (s *store) Open() {
 
 func (s *store) Put(key string, msg packets.ControlPacket) {
 	wr := bytes.NewBuffer(nil)
-	msg.Write(wr)
+
+	if err := msg.Write(wr); err != nil {
+		log.Fatalf("Failed to write: %s", err)
+	}
 
 	if err := s.DB.Update(func(txn *badger.Txn) error {
 		return txn.Set([]byte(key), wr.Bytes())

@@ -155,88 +155,180 @@ func newDev(c conn.Conn, dc gpio.PinOut, rst gpio.PinOut) (*Dev, error) {
 
 	time.Sleep(200 * time.Millisecond)
 
-	d.sendCommand([]byte{0xaf}) // Turn on the OLED display
+	if err := d.sendCommand([]byte{0xaf}); err != nil { // Turn on the OLED display
+		return nil, fmt.Errorf("failed to turn on display: %w", err)
+	}
 
 	return d, nil
 }
 
 func (d *Dev) reset() error {
-	d.rst.Out(gpio.High)
+	if err := d.rst.Out(gpio.High); err != nil {
+		return err
+	}
+
 	time.Sleep(100 * time.Millisecond)
-	d.rst.Out(gpio.Low)
+	if err := d.rst.Out(gpio.Low); err != nil {
+		return err
+	}
+
 	time.Sleep(100 * time.Millisecond)
-	d.rst.Out(gpio.High)
+	if err := d.rst.Out(gpio.High); err != nil {
+		return err
+	}
+
 	time.Sleep(100 * time.Millisecond)
 
 	return nil
 }
 
 func (d *Dev) init() error {
-	d.sendCommand([]byte{0xfd}) // Set Command Lock
-	d.sendData([]byte{0x12})    // Unlock OLED driver IC MCU interface from entering command [reset]
+	if err := d.sendCommand([]byte{0xfd}); err != nil { // Set Command Lock
+		return err
+	}
+	if err := d.sendData([]byte{0x12}); err != nil { // Unlock OLED driver IC MCU interface from entering command [reset]
+		return err
+	}
 
-	d.sendCommand([]byte{0xfd}) // Set Command Lock
-	d.sendData([]byte{0xb1})    // Command A2,B1,B3,BB,BE,C1 accessible if in unlock state
+	if err := d.sendCommand([]byte{0xfd}); err != nil { // Set Command Lock
+		return err
+	}
+	if err := d.sendData([]byte{0xb1}); err != nil { // Command A2,B1,B3,BB,BE,C1 accessible if in unlock state
+		return err
+	}
 
-	d.sendCommand([]byte{0xae}) // Set Sleep Mode: ON
-	d.sendData([]byte{0xa4})    // Set Display Mode: All Off
+	if err := d.sendCommand([]byte{0xae}); err != nil { // Set Sleep Mode: ON
+		return err
+	}
+	if err := d.sendData([]byte{0xa4}); err != nil { // Set Display Mode: All Off
+		return err
+	}
 
-	d.sendCommand([]byte{0x15})    // Set Column Address
-	d.sendData([]byte{0x00, 0x7f}) //    Start, End
+	if err := d.sendCommand([]byte{0x15}); err != nil { // Set Column Address
+		return err
+	}
+	if err := d.sendData([]byte{0x00, 0x7f}); err != nil { // Start, End
+		return err
+	}
 
-	d.sendCommand([]byte{0x75})    // Set Row Address
-	d.sendData([]byte{0x00, 0x7f}) //    Start, End
+	if err := d.sendCommand([]byte{0x75}); err != nil { // Set Row Address
+		return err
+	}
+	if err := d.sendData([]byte{0x00, 0x7f}); err != nil { // Start, End
+		return err
+	}
 
-	d.sendCommand([]byte{0xb3}) // Set Front Clock Divider / Oscillator Frequency
-	d.sendData([]byte{0xf1})
+	if err := d.sendCommand([]byte{0xb3}); err != nil { // Set Front Clock Divider / Oscillator Frequency
+		return err
+	}
+	if err := d.sendData([]byte{0xf1}); err != nil {
+		return err
+	}
 
-	d.sendCommand([]byte{0xca}) // Set Multiplex Ratio
-	d.sendData([]byte{0x7f})
+	if err := d.sendCommand([]byte{0xca}); err != nil { // Set Multiplex Ratio
+		return err
+	}
+	if err := d.sendData([]byte{0x7f}); err != nil {
+		return err
+	}
 
-	d.sendCommand([]byte{0xa0}) // Set Re-map & Dual COM Line Mode
-	d.sendData([]byte{0x74})    // Horizontal address increment
+	if err := d.sendCommand([]byte{0xa0}); err != nil { // Set Re-map & Dual COM Line Mode
+		return err
+	}
+	if err := d.sendData([]byte{0x74}); err != nil { // Horizontal address increment
+		return err
+	}
 
-	d.sendCommand([]byte{0xa1}) // Set Display Start Line
-	d.sendData([]byte{0x00})    // start 00 line
+	if err := d.sendCommand([]byte{0xa1}); err != nil { // Set Display Start Line
+		return err
+	}
+	if err := d.sendData([]byte{0x00}); err != nil { // start 00 line
+		return err
+	}
 
-	d.sendCommand([]byte{0xa2}) // Set Display Offset
-	d.sendData([]byte{0x00})
+	if err := d.sendCommand([]byte{0xa2}); err != nil { // Set Display Offset
+		return err
+	}
+	if err := d.sendData([]byte{0x00}); err != nil {
+		return err
+	}
 
-	d.sendCommand([]byte{0xab, 0x01}) // Set Function selection
+	if err := d.sendCommand([]byte{0xab, 0x01}); err != nil { // Set Function selection
+		return err
+	}
 
-	d.sendCommand([]byte{0xb4}) // Set Segment Low Voltage (VSL)
-	d.sendData([]byte{0xa0, 0xb5, 0x55})
+	if err := d.sendCommand([]byte{0xb4}); err != nil { // Set Segment Low Voltage (VSL)
+		return err
+	}
+	if err := d.sendData([]byte{0xa0, 0xb5, 0x55}); err != nil {
+		return err
+	}
 
-	d.sendCommand([]byte{0xc1}) // Set Contrast Current for Color A,B,C
-	d.sendData([]byte{0xc8, 0x80, 0xc0})
+	if err := d.sendCommand([]byte{0xc1}); err != nil { // Set Contrast Current for Color A,B,C
+		return err
+	}
+	if err := d.sendData([]byte{0xc8, 0x80, 0xc0}); err != nil {
+		return err
+	}
 
-	d.sendCommand([]byte{0xc7}) // Master Contrast Current Control
-	d.sendData([]byte{0x0f})
+	if err := d.sendCommand([]byte{0xc7}); err != nil { // Master Contrast Current Control
+		return err
+	}
+	if err := d.sendData([]byte{0x0f}); err != nil {
+		return err
+	}
 
-	d.sendCommand([]byte{0xb1}) // Set Phase Length
-	d.sendData([]byte{0x32})
+	if err := d.sendCommand([]byte{0xb1}); err != nil { // Set Phase Length
+		return err
+	}
+	if err := d.sendData([]byte{0x32}); err != nil {
+		return err
+	}
 
-	d.sendCommand([]byte{0xb2}) // Display Enhancement
-	d.sendData([]byte{0xa4, 0x00, 0x00})
+	if err := d.sendCommand([]byte{0xb2}); err != nil { // Display Enhancement
+		return err
+	}
+	if err := d.sendData([]byte{0xa4, 0x00, 0x00}); err != nil {
+		return err
+	}
 
-	d.sendCommand([]byte{0xbb}) // Set Pre-charge voltage
-	d.sendData([]byte{0x17})
+	if err := d.sendCommand([]byte{0xbb}); err != nil { // Set Pre-charge voltage
+		return err
+	}
+	if err := d.sendData([]byte{0x17}); err != nil {
+		return err
+	}
 
-	d.sendCommand([]byte{0xb6}) // Set Second Pre-charge period
-	d.sendData([]byte{0x01})
+	if err := d.sendCommand([]byte{0xb6}); err != nil { // Set Second Pre-charge period
+		return err
+	}
+	if err := d.sendData([]byte{0x01}); err != nil {
+		return err
+	}
 
-	d.sendCommand([]byte{0xbe}) // Set V_COMH Voltage
-	d.sendData([]byte{0x05})
+	if err := d.sendCommand([]byte{0xbe}); err != nil { // Set V_COMH Voltage
+		return err
+	}
+	if err := d.sendData([]byte{0x05}); err != nil {
+		return err
+	}
 
-	d.sendCommand([]byte{0xa6}) // Set Display Mode: Reset to normal display [reset]
+	if err := d.sendCommand([]byte{0xa6}); err != nil { // Set Display Mode: Reset to normal display [reset]
+		return err
+	}
 
 	return nil
 }
 
 // drawInternal sends image data to the controller.
 func (d *Dev) drawInternal(next []byte) error {
-	d.sendCommand([]byte{0x5c})
-	d.sendData(next)
+	if err := d.sendCommand([]byte{0x5c}); err != nil {
+		return err
+	}
+
+	if err := d.sendData(next); err != nil {
+		return err
+	}
 
 	return nil
 }

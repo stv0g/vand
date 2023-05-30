@@ -18,12 +18,7 @@ type Line struct {
 }
 
 func (w *Line) UnmarshalJSON(b []byte) error {
-	type gauge Gauge
-	if err := json.Unmarshal(b, (*Line)(w)); err != nil {
-		return err
-	}
-
-	return nil
+	return json.Unmarshal(b, (*Line)(w))
 }
 
 func (w *Line) Init() error {

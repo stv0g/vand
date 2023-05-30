@@ -20,10 +20,10 @@ func init() {
 var webCmd = &cobra.Command{
 	Use:   "web",
 	Short: "Start the web server",
-	Run:   runWeb,
+	RunE:  runWeb,
 }
 
-func runWeb(cmd *cobra.Command, args []string) {
+func runWeb(cmd *cobra.Command, args []string) error {
 	client, err := mqtt.NewClient(&cfg.Broker, "web", cfg.DataDir, true)
 	if err != nil {
 		log.Fatalf("Failed to create MQTT client: %s", err)
@@ -36,5 +36,5 @@ func runWeb(cmd *cobra.Command, args []string) {
 		log.Fatal(err)
 	}
 
-	web.Run(cfg, store, version, commit, date)
+	return web.Run(cfg, store, version, commit, date)
 }

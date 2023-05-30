@@ -16,7 +16,7 @@ import (
 
 const apiBase = "/api/v1"
 
-func Run(cfg *config.Config, store *store.Store, version, commit, date string) {
+func Run(cfg *config.Config, store *store.Store, version, commit, date string) error {
 	router := gin.Default()
 
 	router.Use(StaticMiddleware(cfg))
@@ -35,5 +35,5 @@ func Run(cfg *config.Config, store *store.Store, version, commit, date string) {
 
 	log.Printf("Listening on: http://%s", server.Addr)
 
-	server.ListenAndServe()
+	return server.ListenAndServe()
 }

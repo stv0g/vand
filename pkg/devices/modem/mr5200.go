@@ -767,8 +767,7 @@ type Modem struct {
 	Username string
 	Password string
 
-	token    string
-	maxSMSId int
+	token string
 
 	client *http.Client
 }
@@ -851,6 +850,10 @@ func (m *Modem) postForm(f string, cfg map[string]string) error {
 	}
 
 	req, err := http.NewRequest("POST", m.urlForm(f), strings.NewReader(form.Encode()))
+	if err != nil {
+		return fmt.Errorf("failed to create request: %w", err)
+	}
+
 	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
 
 	resp, err := m.client.Do(req)

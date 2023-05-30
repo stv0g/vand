@@ -24,12 +24,7 @@ type Gauge struct {
 }
 
 func (w *Gauge) UnmarshalJSON(b []byte) error {
-	type gauge Gauge
-	if err := json.Unmarshal(b, (*Gauge)(w)); err != nil {
-		return err
-	}
-
-	return nil
+	return json.Unmarshal(b, (*Gauge)(w))
 }
 
 func (w *Gauge) Init() error {

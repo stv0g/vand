@@ -259,7 +259,7 @@ func (d *Device) SetFET(charge, discharge bool) error {
 	if err := d.EnterFactory(); err != nil {
 		return err
 	}
-	defer d.ExitFactory(false)
+	defer d.ExitFactory(false) //nolint:errcheck
 
 	var val uint16 = 0
 	if !charge {
@@ -296,7 +296,7 @@ func (d *Device) ReadEEPROM(off int) ([]byte, error) {
 	if err := d.EnterFactory(); err != nil {
 		return nil, err
 	}
-	defer d.ExitFactory(false)
+	defer d.ExitFactory(false) //nolint:errcheck
 
 	return d.ReadRegister(off)
 }

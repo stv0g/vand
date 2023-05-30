@@ -188,8 +188,14 @@ func NewConfig(configFile string) (*Config, error) {
 	}
 
 	log.Printf("Loaded configuration:\n")
-	bs, _ := yaml.Marshal(cfg)
-	log.Writer().Write(bs)
+	bs, err := yaml.Marshal(cfg)
+	if err != nil {
+		return nil, err
+	}
+
+	if _, err := log.Writer().Write(bs); err != nil {
+		return nil, err
+	}
 
 	return cfg, nil
 }
