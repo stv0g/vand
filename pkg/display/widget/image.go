@@ -5,7 +5,6 @@ package widget
 
 import (
 	"encoding/json"
-	"image"
 
 	"github.com/stv0g/vand/pkg/store"
 	"github.com/tdewolff/canvas"
@@ -21,12 +20,10 @@ type Image struct {
 	Size       [2]float64        `yaml:"size"`
 	Resolution canvas.Resolution `yaml:"resolution"`
 
-	rect  canvas.Rect
-	image image.Image
+	rect canvas.Rect
 }
 
 func (w *Image) UnmarshalJSON(b []byte) error {
-	type image Image
 	if err := json.Unmarshal(b, (*Image)(w)); err != nil {
 		return err
 	}

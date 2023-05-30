@@ -8,10 +8,10 @@ import (
 	"log"
 
 	pmqtt "github.com/eclipse/paho.mqtt.golang"
-	"github.com/golang/protobuf/proto"
 	"github.com/spf13/cobra"
 	"github.com/stv0g/vand/pkg/mqtt"
 	"github.com/stv0g/vand/pkg/pb"
+	"google.golang.org/protobuf/proto"
 )
 
 func init() {

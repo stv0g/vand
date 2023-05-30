@@ -37,9 +37,9 @@ func (d *Display) PlayGIF(rd io.Reader) error {
 
 	overpaintImg := image.NewRGBA(image.Rect(0, 0, g.Config.Width, g.Config.Height))
 
-	draw.Draw(overpaintImg, overpaintImg.Bounds(), g.Image[0], image.ZP, draw.Src)
+	draw.Draw(overpaintImg, overpaintImg.Bounds(), g.Image[0], image.Point{}, draw.Src)
 	for i := range g.Image {
-		draw.Draw(overpaintImg, overpaintImg.Bounds(), g.Image[i], image.ZP, draw.Over)
+		draw.Draw(overpaintImg, overpaintImg.Bounds(), g.Image[i], image.Point{}, draw.Over)
 
 		imgs[i] = convertAndResizeAndCenter(128, 128, overpaintImg)
 	}
@@ -49,7 +49,9 @@ func (d *Display) PlayGIF(rd io.Reader) error {
 		index := i % len(imgs)
 		c := time.After(time.Duration(10*g.Delay[index]) * time.Millisecond)
 		img := imgs[index]
-		d.Draw(img.Bounds(), img, image.ZP)
+		if err := d.Draw(img.Bounds(), img, image.Point{}); err != nil {
+			return err
+		}
 		<-c
 	}
 }

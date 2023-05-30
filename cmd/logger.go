@@ -10,10 +10,10 @@ import (
 
 	"github.com/dgraph-io/badger/v3"
 	pmqtt "github.com/eclipse/paho.mqtt.golang"
-	"github.com/golang/protobuf/proto"
 	"github.com/spf13/cobra"
 	"github.com/stv0g/vand/pkg/mqtt"
 	"github.com/stv0g/vand/pkg/pb"
+	"google.golang.org/protobuf/proto"
 )
 
 func init() {
@@ -53,14 +53,17 @@ func runLogger(cmd *cobra.Command, args []string) {
 			return
 		}
 
-		logUpdate(db, &sup)
+		if err := logUpdate(db, &sup); err != nil {
+			log.Printf("Failed to log update: %s", err)
+			return
+		}
 	})
 
 	select {}
 }
 
-func logUpdate(db *badger.DB, sup *pb.StateUpdatePoint) {
-	db.Update(func(txn *badger.Txn) error {
+func logUpdate(db *badger.DB, sup *pb.StateUpdatePoint) error {
+	return db.Update(func(txn *badger.Txn) error {
 		ts := sup.Timestamp.Time().Format(time.RFC3339)
 		key := fmt.Sprintf("update/%s", ts)
 

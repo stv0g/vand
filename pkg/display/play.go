@@ -46,7 +46,9 @@ func (d *Display) Play(pages map[string]*Page, s *store.Store) error {
 		}
 
 		rst := rasterizer.Draw(c, Resolution, canvas.LinearColorSpace{})
-		d.Draw(rst.Bounds(), rst, image.ZP)
+		if err := d.Draw(rst.Bounds(), rst, image.Point{}); err != nil {
+			return err
+		}
 
 		t := time.NewTimer(current_page.Time)
 		<-t.C

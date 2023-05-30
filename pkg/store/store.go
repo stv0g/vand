@@ -8,16 +8,14 @@ import (
 	"sync"
 
 	pmqtt "github.com/eclipse/paho.mqtt.golang"
-	"github.com/golang/protobuf/proto"
 	"github.com/imdario/mergo"
 	"github.com/stv0g/vand/pkg/mqtt"
 	"github.com/stv0g/vand/pkg/pb"
 	"github.com/stv0g/vand/pkg/types"
+	"google.golang.org/protobuf/proto"
 )
 
 type Store struct {
-	client *mqtt.Client
-
 	subs     map[chan *pb.StateUpdatePoint]struct{}
 	subsLock sync.RWMutex
 

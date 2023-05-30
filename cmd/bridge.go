@@ -8,11 +8,11 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/golang/protobuf/proto"
 	"github.com/spf13/cobra"
 	"github.com/stv0g/vand/pkg/mqtt"
 	"github.com/stv0g/vand/pkg/pb"
 	"github.com/stv0g/vand/pkg/types"
+	"google.golang.org/protobuf/proto"
 
 	pmqtt "github.com/eclipse/paho.mqtt.golang"
 )

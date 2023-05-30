@@ -98,7 +98,7 @@ func (d *Device) GetState() (*pb.CarOBD2State, error) {
 
 	log.Printf("Ignition state: %v", s)
 
-	if s == false {
+	if !s {
 		return nil, fmt.Errorf("ignition is off")
 	}
 

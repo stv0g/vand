@@ -21,7 +21,7 @@ func HandleWebsocketWith(store *store.Store) func(c *gin.Context) {
 	return func(c *gin.Context) {
 		conn, err := wsupgrader.Upgrade(c.Writer, c.Request, nil)
 		if err != nil {
-			log.Printf("Failed to set websocket upgrade: %+v", err)
+			log.Printf("Failed to set websocket upgrade: %s", err)
 			return
 		}
 
@@ -34,11 +34,14 @@ func HandleWebsocketWith(store *store.Store) func(c *gin.Context) {
 		for sup := range sups {
 			pl, err := json.MarshalIndent(sup, "", "  ")
 			if err != nil {
-				log.Printf("Failed to marshal message: %+v", err)
+				log.Printf("Failed to marshal message: %s", err)
 				return
 			}
 
-			conn.WriteMessage(websocket.TextMessage, pl)
+			if err := conn.WriteMessage(websocket.TextMessage, pl); err != nil {
+				log.Printf("Failed to write message: %s", err)
+				return
+			}
 		}
 	}
 }
