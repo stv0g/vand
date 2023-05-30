@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
+
 // Vivaro B 2017 Supported PIDs
 //
 // PID: 0x1		Monitor status since DTCs cleared. (Includes malfunction indicator lamp (MIL), status and number of DTCs, components tests, DTC readiness checks)
@@ -70,7 +73,6 @@ func New(addr string, debug bool) (*Device, error) {
 }
 
 func (d *Device) GetState() (*pb.CarOBD2State, error) {
-
 	var state pb.CarOBD2State
 
 	cmds := []elmobd.OBDCommand{

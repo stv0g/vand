@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+SPDX-License-Identifier: Apache-2.0
+-->
+
 <p align="center" >
     <img style="width: 25%; margin: 4em 0" src="img/logo.svg" alt="wice logo" />
     <h1 align="center">VAN daemon</h1>

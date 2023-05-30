@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
+
 package main
 
 import "github.com/spf13/cobra"
@@ -13,5 +16,4 @@ var envCmd = &cobra.Command{
 }
 
 func runEnv(cmd *cobra.Command, args []string) {
-
 }

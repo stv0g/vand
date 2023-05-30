@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
+
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import useWebSocket from 'react-use-websocket';
 

@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
+
 package display
 
 import (
@@ -11,9 +14,7 @@ const (
 	Pixels = 128
 )
 
-var (
-	Resolution = canvas.DPMM(DotsPerMillimeter)
-)
+var Resolution = canvas.DPMM(DotsPerMillimeter)
 
 type Display struct {
 	display.Drawer

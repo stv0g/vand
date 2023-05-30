@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
+
 package handlers
 
 import (
@@ -17,7 +20,6 @@ type configResponse struct {
 // HandleConfigWith returns runtime configuration to the frontend
 func HandleConfigWith(version, commit, date string) func(*gin.Context) {
 	return func(c *gin.Context) {
-
 		c.JSON(200, &configResponse{
 			Build: respBuild{
 				Commit:  commit,

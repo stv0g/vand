@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
+
 package display
 
 import (
@@ -13,8 +16,8 @@ func DecodeColorHookFunc() mapstructure.DecodeHookFuncType {
 	return func(
 		f reflect.Type,
 		t reflect.Type,
-		data interface{}) (interface{}, error) {
-
+		data interface{},
+	) (interface{}, error) {
 		if f.Kind() != reflect.String || t.Name() != "Color" {
 			return data, nil
 		}

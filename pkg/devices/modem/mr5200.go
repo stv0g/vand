@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
+
 package modem
 
 import (
@@ -12,8 +15,10 @@ import (
 	"github.com/stv0g/vand/pkg/pb"
 )
 
-type AutoConnectMode string
-type FailOverMode string
+type (
+	AutoConnectMode string
+	FailOverMode    string
+)
 
 const (
 	AutoConnectNever       AutoConnectMode = "Never"
@@ -85,8 +90,7 @@ type IPv4Target struct {
 	String string `json:"string,omitempty"`
 }
 
-type IPv6Target struct {
-}
+type IPv6Target struct{}
 
 type UI struct {
 	ServerDaysLeftHide   bool `json:"serverDaysLeftHide"`
@@ -177,25 +181,22 @@ type Cradle struct {
 }
 
 type Router struct {
-	GatewayIP           string `json:"gatewayIP"`
-	DMZaddress          string `json:"DMZaddress"`
-	DMZenabled          bool   `json:"DMZenabled"`
-	ForceSetup          bool   `json:"forceSetup"`
-	DHCP                DHCP   `json:"DHCP"`
-	UsbMode             string `json:"usbMode"`
-	UsbNetworkTethering bool   `json:"usbNetworkTethering"`
-	PortFwdEnabled      bool   `json:"portFwdEnabled"`
-	UsbTetheringActive  bool   `json:"usbTetheringActive"`
-	PortFwdList         []struct {
-	} `json:"portFwdList"`
-	PortFwdAllowEntry    int    `json:"portFwdAllowEntry"`
-	PortFilteringEnabled bool   `json:"portFilteringEnabled"`
-	PortFilteringMode    string `json:"portFilteringMode"`
-	PortFilterWhiteList  []struct {
-	} `json:"portFilterWhiteList"`
-	PortFilterBlackList []struct {
-	} `json:"portFilterBlackList"`
-	ClientList struct {
+	GatewayIP            string     `json:"gatewayIP"`
+	DMZaddress           string     `json:"DMZaddress"`
+	DMZenabled           bool       `json:"DMZenabled"`
+	ForceSetup           bool       `json:"forceSetup"`
+	DHCP                 DHCP       `json:"DHCP"`
+	UsbMode              string     `json:"usbMode"`
+	UsbNetworkTethering  bool       `json:"usbNetworkTethering"`
+	PortFwdEnabled       bool       `json:"portFwdEnabled"`
+	UsbTetheringActive   bool       `json:"usbTetheringActive"`
+	PortFwdList          []struct{} `json:"portFwdList"`
+	PortFwdAllowEntry    int        `json:"portFwdAllowEntry"`
+	PortFilteringEnabled bool       `json:"portFilteringEnabled"`
+	PortFilteringMode    string     `json:"portFilteringMode"`
+	PortFilterWhiteList  []struct{} `json:"portFilterWhiteList"`
+	PortFilterBlackList  []struct{} `json:"portFilterBlackList"`
+	ClientList           struct {
 		List []struct {
 			IP     string `json:"IP,omitempty"`
 			MAC    string `json:"MAC,omitempty"`
@@ -317,20 +318,16 @@ type Wifi struct {
 			Rx int `json:"rx"`
 			Tx int `json:"tx"`
 		} `json:"dataTransferred"`
-		NetworkList []struct {
-		} `json:"networkList"`
-		ScanList []struct {
-		} `json:"scanList"`
+		NetworkList []struct{} `json:"networkList"`
+		ScanList    []struct{} `json:"scanList"`
 	} `json:"offload"`
 	AccessBlackList struct {
-		List []struct {
-		} `json:"list"`
-		Count int `json:"count"`
+		List  []struct{} `json:"list"`
+		Count int        `json:"count"`
 	} `json:"accessBlackList"`
 	AccessWhiteList struct {
-		List []struct {
-		} `json:"list"`
-		Count int `json:"count"`
+		List  []struct{} `json:"list"`
+		Count int        `json:"count"`
 	} `json:"accessWhiteList"`
 }
 
@@ -421,9 +418,8 @@ type General struct {
 	UpTime                    int    `json:"upTime"`
 	Use24HrTimeFormat         bool   `json:"use24HrTimeFormat"`
 	SystemAlertList           struct {
-		List []struct {
-		} `json:"list"`
-		Count int `json:"count"`
+		List  []struct{} `json:"list"`
+		Count int        `json:"count"`
 	} `json:"systemAlertList"`
 	APIVersion        string `json:"apiVersion"`
 	CompanyName       string `json:"companyName"`
@@ -567,9 +563,8 @@ type WWAN struct {
 	ConnectionType       string `json:"connectionType"`
 	CurrentPSserviceType string `json:"currentPSserviceType"`
 	CA                   struct {
-		SCCcount int `json:"SCCcount"`
-		SCClist  []struct {
-		} `json:"SCClist"`
+		SCCcount int        `json:"SCCcount"`
+		SCClist  []struct{} `json:"SCClist"`
 	} `json:"ca"`
 	ConnectionText   string `json:"connectionText"`
 	SessionDuration  int    `json:"sessDuration"`
@@ -629,31 +624,29 @@ type Session struct {
 }
 
 type SIM struct {
-	PIN PIN `json:"pin"`
-	PUK PUK `json:"puk"`
-	MEP struct {
-	} `json:"mep"`
-	PhoneNumber   string `json:"phoneNumber"`
-	ICCID         string `json:"iccid"`
-	IMSI          string `json:"imsi"`
-	SPN           string `json:"SPN"`
-	Status        string `json:"status"`
-	SprintSimLock int    `json:"sprintSimLock"`
+	PIN           PIN      `json:"pin"`
+	PUK           PUK      `json:"puk"`
+	MEP           struct{} `json:"mep"`
+	PhoneNumber   string   `json:"phoneNumber"`
+	ICCID         string   `json:"iccid"`
+	IMSI          string   `json:"imsi"`
+	SPN           string   `json:"SPN"`
+	Status        string   `json:"status"`
+	SprintSimLock int      `json:"sprintSimLock"`
 }
 
 type SMS struct {
-	Ready          bool      `json:"ready"`
-	SendSupported  bool      `json:"sendSupported"`
-	SendEnabled    bool      `json:"sendEnabled"`
-	UnreadMessages int       `json:"unreadMsgs"`
-	AlertSupported bool      `json:"alertSupported"`
-	AlertEnabled   bool      `json:"alertEnabled"`
-	AlertNumList   string    `json:"alertNumList"`
-	MessageCount   int       `json:"msgCount"`
-	Messages       []Message `json:"msgs"`
-	Trans          []struct {
-	} `json:"trans"`
-	SendMessage []struct {
+	Ready          bool       `json:"ready"`
+	SendSupported  bool       `json:"sendSupported"`
+	SendEnabled    bool       `json:"sendEnabled"`
+	UnreadMessages int        `json:"unreadMsgs"`
+	AlertSupported bool       `json:"alertSupported"`
+	AlertEnabled   bool       `json:"alertEnabled"`
+	AlertNumList   string     `json:"alertNumList"`
+	MessageCount   int        `json:"msgCount"`
+	Messages       []Message  `json:"msgs"`
+	Trans          []struct{} `json:"trans"`
+	SendMessage    []struct {
 		ClientID  string `json:"clientId,omitempty"`
 		Enc       string `json:"enc,omitempty"`
 		ErrorCode int    `json:"errorCode,omitempty"`
@@ -684,44 +677,38 @@ type PIN struct {
 
 type AccessControl struct {
 	Nlpc struct {
-		FilterLevel string `json:"filterLevel"`
-		Enabled     bool   `json:"enabled"`
-		Username    string `json:"username"`
-		MacList     []struct {
-		} `json:"macList"`
+		FilterLevel string     `json:"filterLevel"`
+		Enabled     bool       `json:"enabled"`
+		Username    string     `json:"username"`
+		MacList     []struct{} `json:"macList"`
 	} `json:"nlpc"`
 	BlockSites              BlockSites `json:"blocksites"`
 	SchedulerBlockingActive bool       `json:"schedulerBlockingActive"`
 	SchedulerSupported      bool       `json:"schedulerSupported"`
 	SchedulerEnabled        bool       `json:"schedulerEnabled"`
 	SchedulerDefaultMode    string     `json:"schedulerDefaultMode"`
-	SchedulerList           []struct {
-	} `json:"schedulerList"`
+	SchedulerList           []struct{} `json:"schedulerList"`
 }
 
 type WebDaemon struct {
-	AdminPassword              string `json:"adminPassword"`
-	OwnerModeEnabled           bool   `json:"ownerModeEnabled"`
-	HideAdminPassword          bool   `json:"hideAdminPassword"`
-	HintAnswer                 string `json:"hintAnswer"`
-	HintNumber                 int    `json:"hintNumber"`
-	OwnerCustomizationsChanged bool   `json:"ownerCustomizationsChanged"`
-	OwnerCustomizationsList    []struct {
-	} `json:"ownerCustomizationsList"`
+	AdminPassword              string     `json:"adminPassword"`
+	OwnerModeEnabled           bool       `json:"ownerModeEnabled"`
+	HideAdminPassword          bool       `json:"hideAdminPassword"`
+	HintAnswer                 string     `json:"hintAnswer"`
+	HintNumber                 int        `json:"hintNumber"`
+	OwnerCustomizationsChanged bool       `json:"ownerCustomizationsChanged"`
+	OwnerCustomizationsList    []struct{} `json:"ownerCustomizationsList"`
 }
 
 type BlockSites struct {
-	Enabled bool   `json:"enabled"`
-	MACMode string `json:"macMode"`
-	MACList []struct {
-	} `json:"macList"`
-	PatternMode string `json:"patternMode"`
-	PatternList []struct {
-	} `json:"patternList"`
+	Enabled     bool       `json:"enabled"`
+	MACMode     string     `json:"macMode"`
+	MACList     []struct{} `json:"macList"`
+	PatternMode string     `json:"patternMode"`
+	PatternList []struct{} `json:"patternList"`
 }
 
-type LED struct {
-}
+type LED struct{}
 
 type LCD struct {
 	BacklightEnabled       bool   `json:"backlightEnabled"`
@@ -759,14 +746,12 @@ type Ready struct {
 }
 
 type DeviceShare struct {
-	NetworkDeviceName     string `json:"networkDeviceName"`
-	WorkgroupName         string `json:"workgroupName"`
-	RemoveUsbDeviceResult string `json:"removeUsbDeviceResult"`
-	ExtMediaSupported     bool   `json:"extMediaSupported"`
-	USBDevicesInfo        []struct {
-	} `json:"usbDevicesInfo"`
-	NwFoldersInfo []struct {
-	} `json:"nwFoldersInfo"`
+	NetworkDeviceName     string     `json:"networkDeviceName"`
+	WorkgroupName         string     `json:"workgroupName"`
+	RemoveUsbDeviceResult string     `json:"removeUsbDeviceResult"`
+	ExtMediaSupported     bool       `json:"extMediaSupported"`
+	USBDevicesInfo        []struct{} `json:"usbDevicesInfo"`
+	NwFoldersInfo         []struct{} `json:"nwFoldersInfo"`
 }
 
 type Custom struct {

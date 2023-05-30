@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
+
 package widget
 
 import (
@@ -56,7 +59,8 @@ func parseHexColor(s string) (c color.RGBA, err error) {
 func colorDecodeHook(
 	f reflect.Type,
 	t reflect.Type,
-	data interface{}) (interface{}, error) {
+	data interface{},
+) (interface{}, error) {
 	if f.Kind() != reflect.String || t.String() != "color.Color" {
 		return data, nil
 	}
@@ -82,8 +86,8 @@ func colorDecodeHook(
 func widgetDecodeHook(
 	f reflect.Type,
 	t reflect.Type,
-	data interface{}) (interface{}, error) {
-
+	data interface{},
+) (interface{}, error) {
 	if f.Kind() != reflect.Map || t.Name() != "Widget" {
 		return data, nil
 	}

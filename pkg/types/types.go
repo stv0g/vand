@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
+
 package types
 
 import "math"
@@ -14,16 +17,16 @@ type Coordinate struct {
 var NullIsland = Coordinate{0, 0}
 
 // Distance function returns the distance (in meters) between two points of
-//     a given longitude and latitude relatively accurately (using a spherical
-//     approximation of the Earth) through the Haversin Distance Formula for
-//     great arc distance on a sphere with accuracy for small distances
+//
+//	a given longitude and latitude relatively accurately (using a spherical
+//	approximation of the Earth) through the Haversin Distance Formula for
+//	great arc distance on a sphere with accuracy for small distances
 //
 // point coordinates are supplied in degrees and converted into rad. in the func
 //
 // distance returned is METERS!!!!!!
 // http://en.wikipedia.org/wiki/Haversine_formula
 func (c Coordinate) DistanceTo(to Coordinate) float64 {
-
 	// convert to radians
 	// must cast radius as float to multiply later
 	var la1, lo1, la2, lo2 float64

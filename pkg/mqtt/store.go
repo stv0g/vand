@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
+
 package mqtt
 
 import (
@@ -45,7 +48,7 @@ func (s *store) Put(key string, msg packets.ControlPacket) {
 }
 
 func (s *store) Get(key string) packets.ControlPacket {
-	var buf = bytes.NewBuffer(nil)
+	buf := bytes.NewBuffer(nil)
 
 	if err := s.DB.View(func(txn *badger.Txn) error {
 		if it, err := txn.Get([]byte(key)); err == nil {

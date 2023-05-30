@@ -1,6 +1,6 @@
 // Copyright 2016 The Periph Authors. All rights reserved.
-// Use of this source code is governed under the Apache License, Version 2.0
-// that can be found in the LICENSE file.
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
 
 package ssd1351
 
@@ -25,7 +25,7 @@ import (
 // The SSD1351 can operate at up to 3.3Mhz, which is much higher than I²C. This
 // permits higher refresh rates.
 //
-// Wiring
+// # Wiring
 //
 // Connect SDA to SPI_MOSI, SCK to SPI_CLK, CS to SPI_CS.
 func NewSPI(p spi.Port, dc gpio.PinOut, rst gpio.PinOut) (*Dev, error) {
@@ -155,7 +155,7 @@ func newDev(c conn.Conn, dc gpio.PinOut, rst gpio.PinOut) (*Dev, error) {
 
 	time.Sleep(200 * time.Millisecond)
 
-	d.sendCommand([]byte{0xaf}) //Turn on the OLED display
+	d.sendCommand([]byte{0xaf}) // Turn on the OLED display
 
 	return d, nil
 }

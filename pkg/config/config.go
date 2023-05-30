@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
+
 package config
 
 import (
@@ -64,8 +67,7 @@ type DisplayPage struct {
 	Widgets         []widget.Widget `yaml:"widgets"`
 }
 
-type Environment struct {
-}
+type Environment struct{}
 
 type OwnTracks struct {
 	Topic string `yaml:"topic"`

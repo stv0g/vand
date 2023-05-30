@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
+
 package main
 
 import (
@@ -27,7 +30,6 @@ var bridgeCmd = &cobra.Command{
 var flatten = true
 
 func runBridge(cmd *cobra.Command, args []string) {
-
 	clientCar, err := mqtt.NewClient(&cfg.Broker, "bridge-car", cfg.DataDir, false)
 	if err != nil {
 		log.Fatal(err)

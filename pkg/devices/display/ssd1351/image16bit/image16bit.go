@@ -1,6 +1,6 @@
 // Copyright 2016 The Periph Authors. All rights reserved.
-// Use of this source code is governed under the Apache License, Version 2.0
-// that can be found in the LICENSE file.
+// SPDX-FileCopyrightText: 2023 Steffen Vogel <post@steffenvogel.de>
+// SPDX-License-Identifier: Apache-2.0
 
 // Package image16bit implements 16 bit (5, 6, 7 bits per color) 2D graphics.
 //
@@ -42,7 +42,7 @@ var BitsModel = color.ModelFunc(convert)
 
 // VerticalLSB is a 16 bit RGB image.
 //
-// Each 2 bytes represent a single pixel
+// # Each 2 bytes represent a single pixel
 //
 // It is designed specifically to work with SSD1351 OLED display controller.
 type VerticalLSB struct {
