@@ -11,7 +11,7 @@ require (
 	github.com/gin-gonic/gin v1.8.1
 	github.com/golang/protobuf v1.5.2
 	github.com/gorilla/websocket v1.5.0
-	github.com/imdario/mergo v0.3.13
+	github.com/imdario/mergo v0.3.16
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
 	github.com/rzetterberg/elmobd v0.0.0-20230404062119-0c28879a9b12
