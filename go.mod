@@ -21,7 +21,7 @@ require (
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
 	github.com/tdewolff/canvas v0.0.0-20220627195642-6566432f4b20
 	golang.org/x/image v0.5.0
-	golang.org/x/sys v0.0.0-20220825204002-c680a09ffe64
+	golang.org/x/sys v0.0.0-20221010170243-090e33056c14
 	google.golang.org/protobuf v1.28.0
 	gopkg.in/yaml.v2 v2.4.0
 	periph.io/x/conn/v3 v3.6.10
@@ -90,4 +90,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/dgraph-io/ristretto => github.com/dgraph-io/ristretto v0.1.1-0.20220403145359-8e850b710d6d
+replace github.com/dgraph-io/ristretto => github.com/dgraph-io/ristretto v0.1.1
