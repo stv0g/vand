@@ -6,7 +6,7 @@ require (
 	gioui.org v0.0.0-20230526230622-e3ef98dda382
 	github.com/adrianmo/go-nmea v1.7.0
 	github.com/dgraph-io/badger/v3 v3.2103.2
-	github.com/eclipse/paho.mqtt.golang v1.4.1
+	github.com/eclipse/paho.mqtt.golang v1.4.2
 	github.com/gin-contrib/static v0.0.1
 	github.com/gin-gonic/gin v1.8.1
 	github.com/golang/protobuf v1.5.2
