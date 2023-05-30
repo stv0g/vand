@@ -90,4 +90,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/dgraph-io/ristretto => github.com/dgraph-io/ristretto v0.1.1-0.20220403145359-8e850b710d6d
+replace github.com/dgraph-io/ristretto => github.com/dgraph-io/ristretto v0.1.1
