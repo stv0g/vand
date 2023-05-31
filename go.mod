@@ -27,7 +27,7 @@ require (
 	golang.org/x/image v0.7.0
 	golang.org/x/sys v0.8.0
 	google.golang.org/protobuf v1.30.0
-	gopkg.in/yaml.v2 v2.2.8
+	gopkg.in/yaml.v2 v2.4.0
 	gopkg.in/yaml.v3 v3.0.1
 	periph.io/x/conn/v3 v3.7.0
 	periph.io/x/host/v3 v3.8.2
