@@ -6,7 +6,7 @@ module github.com/stv0g/vand
 go 1.20
 
 require (
-	gioui.org v0.0.0-20230526230622-e3ef98dda382
+	gioui.org v0.0.0-20230611141527-3bb6cca15710
 	github.com/adrianmo/go-nmea v1.8.0
 	github.com/dgraph-io/badger/v3 v3.2103.5
 	github.com/dgraph-io/badger/v4 v4.1.0
@@ -55,7 +55,7 @@ require (
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.14.0 // indirect
-	github.com/go-text/typesetting v0.0.0-20230529202609-ea024409d2f8 // indirect
+	github.com/go-text/typesetting v0.0.0-20230602202114-9797aefac433 // indirect
 	github.com/goburrow/serial v0.1.0 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
