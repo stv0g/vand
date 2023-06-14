@@ -8,7 +8,7 @@ go 1.20
 require (
 	gioui.org v0.0.0-20230611141527-3bb6cca15710
 	github.com/adrianmo/go-nmea v1.8.0
-	github.com/dgraph-io/badger/v3 v3.2103.5
+	github.com/dgraph-io/badger/v4 v4.1.0
 	github.com/dgraph-io/badger/v4 v4.1.0
 	github.com/eclipse/paho.mqtt.golang v1.4.2
 	github.com/gin-contrib/static v0.0.1
