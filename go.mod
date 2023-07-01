@@ -6,7 +6,7 @@ module github.com/stv0g/vand
 go 1.20
 
 require (
-	gioui.org v0.0.0-20230611141527-3bb6cca15710
+	gioui.org v0.0.0-20230701070506-cc2d2c0abf3b
 	github.com/adrianmo/go-nmea v1.8.0
 	github.com/dgraph-io/badger/v3 v3.2103.5
 	github.com/dgraph-io/badger/v4 v4.1.0
