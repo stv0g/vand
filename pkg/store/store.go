@@ -7,8 +7,8 @@ import (
 	"log"
 	"sync"
 
+	"dario.cat/mergo"
 	pmqtt "github.com/eclipse/paho.mqtt.golang"
-	"github.com/imdario/mergo"
 	"github.com/stv0g/vand/pkg/mqtt"
 	"github.com/stv0g/vand/pkg/pb"
 	"github.com/stv0g/vand/pkg/types"

@@ -8,7 +8,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/dgraph-io/badger/v3"
+	"github.com/dgraph-io/badger/v4"
 	pmqtt "github.com/eclipse/paho.mqtt.golang"
 	"github.com/spf13/cobra"
 	"github.com/stv0g/vand/pkg/mqtt"

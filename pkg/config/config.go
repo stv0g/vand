@@ -14,7 +14,7 @@ import (
 	"github.com/spf13/viper"
 	"github.com/stv0g/vand/pkg/display/widget"
 	"github.com/stv0g/vand/pkg/mqtt"
-	"gopkg.in/yaml.v2"
+	"gopkg.in/yaml.v3"
 )
 
 type Modem struct {
