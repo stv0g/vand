@@ -13,9 +13,10 @@ ifeq ($(GOARCH),arm)
   export GOARM ?= 7
 endif
 
-all: run
+all: backend
 
 frontend:
+	npm --prefix frontend/ install
 	npm --prefix frontend/ run-script build
 
 backend:
