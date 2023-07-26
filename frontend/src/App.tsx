@@ -2,26 +2,25 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
-import useWebSocket from 'react-use-websocket';
+// import useWebSocket from 'react-use-websocket';
 
 import logo from './logo.svg';
 import './App.scss';
 
 function App() {
-	const socketUrl = '/api/v1/ws';
-
-	const {
-		sendMessage,
-		sendJsonMessage,
-		lastMessage,
-		lastJsonMessage,
-		readyState,
-		getWebSocket,
-	} = useWebSocket(socketUrl, {
-		onOpen: () => console.log('opened'),
-		// Will attempt to reconnect on all close events, such as server shutting down
-		shouldReconnect: (closeEvent) => true,
-	});
+	// const socketUrl = '/api/v1/ws';
+	// const {
+	// 	sendMessage,
+	// 	sendJsonMessage,
+	// 	lastMessage,
+	// 	lastJsonMessage,
+	// 	readyState,
+	// 	getWebSocket,
+	// } = useWebSocket(socketUrl, {
+	// 	onOpen: () => console.log('opened'),
+	// 	// Will attempt to reconnect on all close events, such as server shutting down
+	// 	shouldReconnect: (closeEvent) => true,
+	// });
 
 	return (
 		<div className="App">
