@@ -51,7 +51,7 @@ To use VANd follow these steps:
 
 ## Documentation
 
-Documentation of ɯice can be found in the [`docs/`](./docs) directory.
+Documentation of vand can be found in the [`docs/`](./docs) directory.
 
 ## Authors
 
@@ -59,8 +59,8 @@ Documentation of ɯice can be found in the [`docs/`](./docs) directory.
 
 ## License
 
-ɯice is licensed under the [Apache 2.0](./LICENSE) license.
+vand is licensed under the [Apache 2.0](./LICENSE) license.
 
-Copyright 2022, Steffen Vogel
+Copyright 2023, Steffen Vogel
 
 [vand]: https://github.com/stv0g/vand
