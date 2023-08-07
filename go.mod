@@ -29,7 +29,7 @@ require (
 	periph.io/x/host/v3 v3.8.2
 )
 
-require github.com/dgraph-io/badger/v4 v4.1.0
+require github.com/dgraph-io/badger/v4 v4.2.0
 
 require (
 	gioui.org/cpu v0.0.0-20220412190645-f1e9e8c3b1f7 // indirect
