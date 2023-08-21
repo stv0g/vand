@@ -22,7 +22,7 @@ require (
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
 	github.com/tdewolff/canvas v0.0.0-20230725155945-641901f69684
 	golang.org/x/image v0.11.0
-	golang.org/x/sys v0.10.0
+	golang.org/x/sys v0.11.0
 	google.golang.org/protobuf v1.31.0
 	gopkg.in/yaml.v3 v3.0.1
 	periph.io/x/conn/v3 v3.7.0
