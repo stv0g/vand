@@ -21,7 +21,7 @@ require (
 	github.com/spf13/viper v1.16.0
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
 	github.com/tdewolff/canvas v0.0.0-20230824220451-8bc6ac4f4d34
-	golang.org/x/image v0.11.0
+	golang.org/x/image v0.12.0
 	golang.org/x/sys v0.11.0
 	google.golang.org/protobuf v1.31.0
 	gopkg.in/yaml.v3 v3.0.1
@@ -91,7 +91,7 @@ require (
 	golang.org/x/exp/shiny v0.0.0-20230522175609-2e198f4a06a1 // indirect
 	golang.org/x/net v0.10.0 // indirect
 	golang.org/x/sync v0.2.0 // indirect
-	golang.org/x/text v0.12.0 // indirect
+	golang.org/x/text v0.13.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	star-tex.org/x/tex v0.4.0 // indirect
 )
