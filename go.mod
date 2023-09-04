@@ -7,7 +7,7 @@ go 1.20
 
 require (
 	dario.cat/mergo v1.0.0
-	gioui.org v0.2.0
+	gioui.org v0.3.0
 	github.com/adrianmo/go-nmea v1.8.0
 	github.com/eclipse/paho.mqtt.golang v1.4.3
 	github.com/gin-contrib/static v0.0.1
