@@ -7,7 +7,7 @@ go 1.20
 
 require (
 	dario.cat/mergo v1.0.0
-	gioui.org v0.3.0
+	gioui.org v0.3.1
 	github.com/adrianmo/go-nmea v1.8.0
 	github.com/eclipse/paho.mqtt.golang v1.4.3
 	github.com/gin-contrib/static v0.0.1
@@ -33,7 +33,7 @@ require github.com/dgraph-io/badger/v4 v4.2.0
 
 require (
 	gioui.org/cpu v0.0.0-20220412190645-f1e9e8c3b1f7 // indirect
-	gioui.org/shader v1.0.6 // indirect
+	gioui.org/shader v1.0.8 // indirect
 	github.com/ByteArena/poly2tri-go v0.0.0-20170716161910-d102ad91854f // indirect
 	github.com/adrg/strutil v0.3.0 // indirect
 	github.com/adrg/sysfont v0.1.2 // indirect
