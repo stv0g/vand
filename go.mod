@@ -17,7 +17,7 @@ require (
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
 	github.com/rzetterberg/elmobd v0.0.0-20230404062119-0c28879a9b12
 	github.com/simonvetter/modbus v1.6.0
-	github.com/spf13/cobra v1.7.0
+	github.com/spf13/cobra v1.8.0
 	github.com/spf13/viper v1.17.0
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
 	github.com/tdewolff/canvas v0.0.0-20231022211928-a0505928f567
