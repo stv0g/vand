@@ -382,6 +382,8 @@ github.com/tdewolff/canvas v0.0.0-20231102134958-6de43c767dbf h1:SiFIPDecTcEpw8G
 github.com/tdewolff/canvas v0.0.0-20231102134958-6de43c767dbf/go.mod h1:QT5dPLAqJLD02UXi9Dd2BkCBV4i3zh+dVxITYpd7q2Y=
 github.com/tdewolff/canvas v0.0.0-20231120191143-3711dfc3bb35 h1:yDQmVx90TTMxQ1pGkpJNh/Tzf7Hb/gkE/p4jJDDs29E=
 github.com/tdewolff/canvas v0.0.0-20231120191143-3711dfc3bb35/go.mod h1:QT5dPLAqJLD02UXi9Dd2BkCBV4i3zh+dVxITYpd7q2Y=
+github.com/tdewolff/canvas v0.0.0-20231203232002-67b379b2cda5 h1:CnJrj/HMH0QSgrkjeMbWI7dVeHWWLaiXHJ5gyfg4Txk=
+github.com/tdewolff/canvas v0.0.0-20231203232002-67b379b2cda5/go.mod h1:hGxWCl1a3KdYh6pxYy9sa9jLAlmKLMeuCSCjjy39iVE=
 github.com/tdewolff/minify/v2 v2.12.6 h1:kw5FU0ErJyd7fs+TMojIlBvLyEjsN93wP1n8NUOs320=
 github.com/tdewolff/minify/v2 v2.12.6/go.mod h1:ZRKTheiOGyLSK8hOZWWv+YoJAECzDivNgAlVYDHp/Ws=
 github.com/tdewolff/minify/v2 v2.20.5 h1:IbJpmpAFESnuJPdsvFBJWsDcXE5qHsmaVQrRqhOI9sI=
