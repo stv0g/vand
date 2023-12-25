@@ -18,7 +18,7 @@ require (
 	github.com/rzetterberg/elmobd v0.0.0-20230404062119-0c28879a9b12
 	github.com/simonvetter/modbus v1.6.0
 	github.com/spf13/cobra v1.8.0
-	github.com/spf13/viper v1.18.1
+	github.com/spf13/viper v1.18.2
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
 	github.com/tdewolff/canvas v0.0.0-20231203232002-67b379b2cda5
 	golang.org/x/image v0.14.0
