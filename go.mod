@@ -3,9 +3,7 @@
 
 module github.com/stv0g/vand
 
-go 1.22.0
-
-toolchain go1.22.1
+go 1.22.1
 
 require (
 	dario.cat/mergo v1.0.0
