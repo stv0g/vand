@@ -455,10 +455,14 @@ github.com/tdewolff/canvas v0.0.0-20240305210031-9a377e2a1436 h1:kcCSsF5ymeIe92a
 github.com/tdewolff/canvas v0.0.0-20240305210031-9a377e2a1436/go.mod h1:z0lxHR0NiA2aBgu/U/3x8CYKR6KrSaMcMbOQRgXBGNs=
 github.com/tdewolff/canvas v0.0.0-20240313223806-c16dea836d4e h1:I2Rk8cgejhQBt4R5H6msc2J+I5H3huMWTqyLvtg9sT0=
 github.com/tdewolff/canvas v0.0.0-20240313223806-c16dea836d4e/go.mod h1:b4lDs85I0Ine/lQglBErYWtTEKUBw3zjMx3P6ZKPNXw=
+github.com/tdewolff/canvas v0.0.0-20240412122338-9e99fc2fbc32 h1:jb7iKst5O8glF0ataTTjvLEv1v9J1I8+QqOk5/4loLo=
+github.com/tdewolff/canvas v0.0.0-20240412122338-9e99fc2fbc32/go.mod h1:U9Hvv7qfDPzaRMqcs0E48lKqXGNG4QocgIQo58xLIRI=
 github.com/tdewolff/font v0.0.0-20240305151633-f69a3adc9d92 h1:QfqzZ5hJ0eH6kfsViAqL0vrXX3p/CUewuzbqrefzDho=
 github.com/tdewolff/font v0.0.0-20240305151633-f69a3adc9d92/go.mod h1:NlGnfhGrPSwSRo7Q/SsJ/RI3/03lBBmqTRtT4/DuC0g=
 github.com/tdewolff/font v0.0.0-20240305203601-31e85c6c16a3 h1:AeqNFC9aXWAbpeOB+uQF1ucHasgRsYtDF1seuTxI7hg=
 github.com/tdewolff/font v0.0.0-20240305203601-31e85c6c16a3/go.mod h1:NlGnfhGrPSwSRo7Q/SsJ/RI3/03lBBmqTRtT4/DuC0g=
+github.com/tdewolff/font v0.0.0-20240412122105-b43814e4d094 h1:PFVLgSaSLYk89rgDMkPKaOL2jTTaDd51PJV756inSEg=
+github.com/tdewolff/font v0.0.0-20240412122105-b43814e4d094/go.mod h1:S1ByajP+rzLFlhudtNTELNuhxoSZ19Coif+JE4kivAo=
 github.com/tdewolff/minify/v2 v2.12.6 h1:kw5FU0ErJyd7fs+TMojIlBvLyEjsN93wP1n8NUOs320=
 github.com/tdewolff/minify/v2 v2.12.6/go.mod h1:ZRKTheiOGyLSK8hOZWWv+YoJAECzDivNgAlVYDHp/Ws=
 github.com/tdewolff/minify/v2 v2.20.5 h1:IbJpmpAFESnuJPdsvFBJWsDcXE5qHsmaVQrRqhOI9sI=
