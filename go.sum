@@ -53,6 +53,8 @@ gioui.org v0.4.2 h1:txwggR/n2YYAkhnwgTpqk/5h5Fy7SkI20hOrbwlOyGE=
 gioui.org v0.4.2/go.mod h1:2atiYR4upH71/6ehnh6XsUELa7JZOrOHHNMDxGBZF0Q=
 gioui.org v0.5.0 h1:07g7/LY1MFuTncfO4A5DIKMMsQV6PkPHyx0MhDqgmYY=
 gioui.org v0.5.0/go.mod h1:2atiYR4upH71/6ehnh6XsUELa7JZOrOHHNMDxGBZF0Q=
+gioui.org v0.6.0 h1:ZSXO/AbpFZJ2L9NU69uFQfDI3BKIH+YEJElrn0B+aZI=
+gioui.org v0.6.0/go.mod h1:eUvGo6FAzA7jUqeSu5a+M1W03yc9r1nanIBS8A5+Nng=
 gioui.org/cpu v0.0.0-20210808092351-bfe733dd3334/go.mod h1:A8M0Cn5o+vY5LTMlnRoK3O5kG+rH0kWfJjeKd9QpBmQ=
 gioui.org/cpu v0.0.0-20220412190645-f1e9e8c3b1f7 h1:tNJdnP5CgM39PRc+KWmBRRYX/zJ+rd5XaYxY5d5veqA=
 gioui.org/cpu v0.0.0-20220412190645-f1e9e8c3b1f7/go.mod h1:A8M0Cn5o+vY5LTMlnRoK3O5kG+rH0kWfJjeKd9QpBmQ=
@@ -191,6 +193,8 @@ github.com/go-text/typesetting v0.0.0-20230803102845-24e03d8b5372 h1:FQivqchis6b
 github.com/go-text/typesetting v0.0.0-20230803102845-24e03d8b5372/go.mod h1:evDBbvNR/KaVFZ2ZlDSOWWXIUKq0wCOEtzLxRM8SG3k=
 github.com/go-text/typesetting v0.0.0-20231013144250-6cc35dbfae7d h1:HrdwTlHVMdi9nOW7ZnYiLmIT1hJHvipIwM0aX3rKn8I=
 github.com/go-text/typesetting v0.0.0-20231013144250-6cc35dbfae7d/go.mod h1:evDBbvNR/KaVFZ2ZlDSOWWXIUKq0wCOEtzLxRM8SG3k=
+github.com/go-text/typesetting v0.1.1 h1:bGAesCuo85nXnEN5LmFMVGAGpGkCPtHrZLi//qD7EJo=
+github.com/go-text/typesetting v0.1.1/go.mod h1:d22AnmeKq/on0HNv73UFriMKc4Ez6EqZAofLhAzpSzI=
 github.com/go-text/typesetting-utils v0.0.0-20230412163830-89e4bcfa3ecc h1:9Kf84pnrmmjdRzZIkomfjowmGUhHs20jkrWYw/I6CYc=
 github.com/goburrow/serial v0.1.0 h1:v2T1SQa/dlUqQiYIT8+Cu7YolfqAi3K96UmhwYyuSrA=
 github.com/goburrow/serial v0.1.0/go.mod h1:sAiqG0nRVswsm1C97xsttiYCzSLBmUZ/VSlVLZJ8haA=
