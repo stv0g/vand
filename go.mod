@@ -7,7 +7,7 @@ go 1.22.2
 
 require (
 	dario.cat/mergo v1.0.0
-	gioui.org v0.5.0
+	gioui.org v0.6.0
 	github.com/adrianmo/go-nmea v1.8.0
 	github.com/eclipse/paho.mqtt.golang v1.4.3
 	github.com/gin-contrib/static v1.1.1
@@ -55,7 +55,7 @@ require (
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.19.0 // indirect
-	github.com/go-text/typesetting v0.0.0-20231013144250-6cc35dbfae7d // indirect
+	github.com/go-text/typesetting v0.1.1 // indirect
 	github.com/goburrow/serial v0.1.0 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
