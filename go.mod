@@ -20,9 +20,9 @@ require (
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/viper v1.18.2
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
-	github.com/tdewolff/canvas v0.0.0-20240414231112-e923d936a11e
+	github.com/tdewolff/canvas v0.0.0-20240420213651-d5a04e36ef50
 	golang.org/x/image v0.15.0
-	golang.org/x/sys v0.18.0
+	golang.org/x/sys v0.19.0
 	google.golang.org/protobuf v1.33.0
 	gopkg.in/yaml.v3 v3.0.1
 	periph.io/x/conn/v3 v3.7.0
@@ -85,7 +85,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
-	github.com/tdewolff/font v0.0.0-20240412122105-b43814e4d094 // indirect
+	github.com/tdewolff/font v0.0.0-20240417221047-e5855237f87b // indirect
 	github.com/tdewolff/minify/v2 v2.20.5 // indirect
 	github.com/tdewolff/parse/v2 v2.7.3 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
@@ -94,10 +94,10 @@ require (
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.9.0 // indirect
 	golang.org/x/arch v0.7.0 // indirect
-	golang.org/x/crypto v0.21.0 // indirect
+	golang.org/x/crypto v0.22.0 // indirect
 	golang.org/x/exp v0.0.0-20231006140011-7918f672742d // indirect
 	golang.org/x/exp/shiny v0.0.0-20231006140011-7918f672742d // indirect
-	golang.org/x/net v0.22.0 // indirect
+	golang.org/x/net v0.24.0 // indirect
 	golang.org/x/sync v0.5.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
