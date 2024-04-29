@@ -15,7 +15,7 @@ require (
 	github.com/gorilla/websocket v1.5.1
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
-	github.com/rzetterberg/elmobd v0.0.0-20230404062119-0c28879a9b12
+	github.com/rzetterberg/elmobd v0.0.0-20240426091703-01e7bbc11e6c
 	github.com/simonvetter/modbus v1.6.1
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/viper v1.18.2
