@@ -30,7 +30,7 @@ RUN go build -o vand ./cmd
 
 # RUN npm run build
 
-FROM alpine:3.19
+FROM alpine:3.20
 
 RUN apk update && apk add ca-certificates curl && rm -rf /var/cache/apk/*
 
