@@ -8,7 +8,7 @@ go 1.22.2
 require (
 	dario.cat/mergo v1.0.0
 	gioui.org v0.6.0
-	github.com/adrianmo/go-nmea v1.8.0
+	github.com/adrianmo/go-nmea v1.9.0
 	github.com/eclipse/paho.mqtt.golang v1.4.3
 	github.com/gin-contrib/static v1.1.2
 	github.com/gin-gonic/gin v1.10.0
