@@ -510,6 +510,8 @@ github.com/tdewolff/canvas v0.0.0-20240705123529-f88fccdf274d h1:wNzvvTFC1063iwR
 github.com/tdewolff/canvas v0.0.0-20240705123529-f88fccdf274d/go.mod h1:lyQHF8f1WhRD7HnvJGtj7kOVjDI/cdK+YqYeZ/3pHCI=
 github.com/tdewolff/canvas v0.0.0-20240714150822-a65f42eb0ea6 h1:ViGZPRyDvecxnagIgGAKk95HTF7wWH9ntjInF6msVhA=
 github.com/tdewolff/canvas v0.0.0-20240714150822-a65f42eb0ea6/go.mod h1:lyQHF8f1WhRD7HnvJGtj7kOVjDI/cdK+YqYeZ/3pHCI=
+github.com/tdewolff/canvas v0.0.0-20240728194142-58998955aae5 h1:jp4AXwTKRvlMKaHTtFB5ROWdG64TU+u60bmxM1iTB6E=
+github.com/tdewolff/canvas v0.0.0-20240728194142-58998955aae5/go.mod h1:1bMKQWV4mWh4GtLPMBzMaY2Z8E8zqolCi4ceTxStVFE=
 github.com/tdewolff/font v0.0.0-20240305151633-f69a3adc9d92 h1:QfqzZ5hJ0eH6kfsViAqL0vrXX3p/CUewuzbqrefzDho=
 github.com/tdewolff/font v0.0.0-20240305151633-f69a3adc9d92/go.mod h1:NlGnfhGrPSwSRo7Q/SsJ/RI3/03lBBmqTRtT4/DuC0g=
 github.com/tdewolff/font v0.0.0-20240305203601-31e85c6c16a3 h1:AeqNFC9aXWAbpeOB+uQF1ucHasgRsYtDF1seuTxI7hg=
@@ -520,6 +522,8 @@ github.com/tdewolff/font v0.0.0-20240417221047-e5855237f87b h1:PPaIj43Z8Lpu1PJtF
 github.com/tdewolff/font v0.0.0-20240417221047-e5855237f87b/go.mod h1:S1ByajP+rzLFlhudtNTELNuhxoSZ19Coif+JE4kivAo=
 github.com/tdewolff/font v0.0.0-20240517133251-c96fa5abd1d4 h1:J8+TkjqerqKWlFF3Fxvja1AaoFcUJCjvCNZD8xjwKP8=
 github.com/tdewolff/font v0.0.0-20240517133251-c96fa5abd1d4/go.mod h1:a0HdeOMO7cKlqkLGo3RjI+XlSUy2mUWNtaBAP+gnrgw=
+github.com/tdewolff/font v0.0.0-20240728193914-9dc6e3441d03 h1:8gZpGeUF+0bYYNDJCWXG64YH4WdSFZDFoWp1RKil1Qg=
+github.com/tdewolff/font v0.0.0-20240728193914-9dc6e3441d03/go.mod h1:wiFLtNiPVz+WWkn1CekBWgSEEV5PTR7qae3wKbU0xd0=
 github.com/tdewolff/minify/v2 v2.12.6 h1:kw5FU0ErJyd7fs+TMojIlBvLyEjsN93wP1n8NUOs320=
 github.com/tdewolff/minify/v2 v2.12.6/go.mod h1:ZRKTheiOGyLSK8hOZWWv+YoJAECzDivNgAlVYDHp/Ws=
 github.com/tdewolff/minify/v2 v2.20.5 h1:IbJpmpAFESnuJPdsvFBJWsDcXE5qHsmaVQrRqhOI9sI=
@@ -530,6 +534,8 @@ github.com/tdewolff/parse/v2 v2.7.3 h1:SHj/ry85FdqniccvzJTG+Gt/mi/HNa1cJcTzYZnvc
 github.com/tdewolff/parse/v2 v2.7.3/go.mod h1:9p2qMIHpjRSTr1qnFxQr+igogyTUTlwvf9awHSm84h8=
 github.com/tdewolff/parse/v2 v2.7.14 h1:100KJ+QAO3PpMb3uUjzEU/NpmCdbBYz6KPmCIAfWpR8=
 github.com/tdewolff/parse/v2 v2.7.14/go.mod h1:3FbJWZp3XT9OWVN3Hmfp0p/a08v4h8J9W1aghka0soA=
+github.com/tdewolff/parse/v2 v2.7.15 h1:hysDXtdGZIRF5UZXwpfn3ZWRbm+ru4l53/ajBRGpCTw=
+github.com/tdewolff/parse/v2 v2.7.15/go.mod h1:3FbJWZp3XT9OWVN3Hmfp0p/a08v4h8J9W1aghka0soA=
 github.com/tdewolff/test v1.0.7/go.mod h1:6DAvZliBAAnD7rhVgwaM7DE5/d9NMOAJ09SqYqeK4QE=
 github.com/tdewolff/test v1.0.9 h1:SswqJCmeN4B+9gEAi/5uqT0qpi1y2/2O47V/1hhGZT0=
 github.com/tdewolff/test v1.0.9/go.mod h1:6DAvZliBAAnD7rhVgwaM7DE5/d9NMOAJ09SqYqeK4QE=

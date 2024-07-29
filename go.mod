@@ -20,7 +20,7 @@ require (
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.19.0
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
-	github.com/tdewolff/canvas v0.0.0-20240714150822-a65f42eb0ea6
+	github.com/tdewolff/canvas v0.0.0-20240728194142-58998955aae5
 	golang.org/x/image v0.18.0
 	golang.org/x/sys v0.22.0
 	google.golang.org/protobuf v1.34.2
@@ -88,9 +88,9 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
-	github.com/tdewolff/font v0.0.0-20240517133251-c96fa5abd1d4 // indirect
+	github.com/tdewolff/font v0.0.0-20240728193914-9dc6e3441d03 // indirect
 	github.com/tdewolff/minify/v2 v2.20.5 // indirect
-	github.com/tdewolff/parse/v2 v2.7.14 // indirect
+	github.com/tdewolff/parse/v2 v2.7.15 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	go.opencensus.io v0.24.0 // indirect
