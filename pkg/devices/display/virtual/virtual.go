@@ -13,7 +13,6 @@ import (
 	"os"
 
 	"gioui.org/app"
-	"gioui.org/io/system"
 	"gioui.org/layout"
 	"gioui.org/op"
 	"gioui.org/unit"
@@ -33,13 +32,15 @@ type Dev struct {
 }
 
 func New() (*Dev, error) {
+	w := &app.Window{}
+	w.Option(
+		app.Title("vand"),
+		app.Size(unit.Dp(Width), unit.Dp(Height)),
+		app.MinSize(unit.Dp(Width), unit.Dp(Height)),
+		app.MaxSize(unit.Dp(Width), unit.Dp(Height)))
+
 	d := &Dev{
-		window: app.NewWindow(
-			app.Title("vand"),
-			app.Size(unit.Dp(Width), unit.Dp(Height)),
-			app.MinSize(unit.Dp(Width), unit.Dp(Height)),
-			app.MaxSize(unit.Dp(Width), unit.Dp(Height)),
-		),
+		window: w,
 		rect: image.Rectangle{
 			Max: image.Point{
 				Width,
@@ -58,14 +59,15 @@ func New() (*Dev, error) {
 func (d *Dev) loop() {
 	var ops op.Ops
 	for {
-		e := <-d.window.Events()
+		e := d.window.Event()
 
 		switch e := e.(type) {
 
-		case system.DestroyEvent:
+		case app.DestroyEvent:
 			os.Exit(0)
-		case system.FrameEvent:
-			gtx := layout.NewContext(&ops, e)
+
+		case app.FrameEvent:
+			gtx := app.NewContext(&ops, e)
 			layout.Center.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
 				c := gio.NewContain(gtx, float64(d.rect.Dx()), float64(d.rect.Dy()))
 				c.RenderImage(d.image, canvas.Identity)
