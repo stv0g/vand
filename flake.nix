@@ -27,23 +27,35 @@
           buildInputs =
             with pkgs;
             [
-              nodejs_22
+              nodejs_18
               protobuf
               protoc-gen-go
             ]
             ++ (
-              if stdenv.isDarwin then
+              if stdenv.isLinux then
+                [
+                  vulkan-headers
+                  libxkbcommon
+                  wayland
+                  libGL
+                  pkg-config
+                  xorg.libX11
+                  xorg.libXcursor
+                  xorg.libXfixes
+                ]
+              else if stdenv.isDarwin then
                 with darwin.apple_sdk_11_0;
                 [
+                  MacOSX-SDK
                   frameworks.Foundation
                   frameworks.Metal
                   frameworks.QuartzCore
                   frameworks.AppKit
-                  MacOSX-SDK
                 ]
               else
                 [ ]
-            );
+            )
+            ++ (if stdenv.isLinux then with pkgs; [ libxkbcommon ] else [ ]);
           doCheck = false;
         };
 

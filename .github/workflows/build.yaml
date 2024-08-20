@@ -38,6 +38,17 @@ jobs:
       run: |
         go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
         npm --prefix frontend install
+        sudo apt-get install \
+            pkg-config \
+            libwayland-dev \
+            libx11-dev \
+            libx11-xcb-dev \
+            libxkbcommon-x11-dev \
+            libgles2-mesa-dev \
+            libegl1-mesa-dev \
+            libffi-dev \
+            libxcursor-dev \
+            libvulkan-dev
 
     - name: golangci-lint
       uses: golangci/golangci-lint-action@v6
