@@ -6,7 +6,7 @@ module github.com/stv0g/vand
 go 1.22.5
 
 require (
-	dario.cat/mergo v1.0.0
+	dario.cat/mergo v1.0.1
 	gioui.org v0.6.0
 	github.com/adrianmo/go-nmea v1.10.0
 	github.com/eclipse/paho.mqtt.golang v1.5.0
