@@ -7,7 +7,7 @@ go 1.22.5
 
 require (
 	dario.cat/mergo v1.0.1
-	gioui.org v0.6.0
+	gioui.org v0.7.1
 	github.com/adrianmo/go-nmea v1.10.0
 	github.com/eclipse/paho.mqtt.golang v1.5.0
 	github.com/gin-contrib/static v1.1.2
@@ -98,8 +98,8 @@ require (
 	go.uber.org/multierr v1.9.0 // indirect
 	golang.org/x/arch v0.8.0 // indirect
 	golang.org/x/crypto v0.25.0 // indirect
-	golang.org/x/exp v0.0.0-20231006140011-7918f672742d // indirect
-	golang.org/x/exp/shiny v0.0.0-20231006140011-7918f672742d // indirect
+	golang.org/x/exp v0.0.0-20240707233637-46b078467d37 // indirect
+	golang.org/x/exp/shiny v0.0.0-20240707233637-46b078467d37 // indirect
 	golang.org/x/net v0.27.0 // indirect
 	golang.org/x/sync v0.8.0 // indirect
 	golang.org/x/text v0.18.0 // indirect
