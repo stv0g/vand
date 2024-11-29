@@ -108,4 +108,4 @@ require (
 	star-tex.org/x/tex v0.4.0 // indirect
 )
 
-replace github.com/dgraph-io/ristretto => github.com/dgraph-io/ristretto v0.2.0
+replace github.com/dgraph-io/ristretto/v2 => github.com/dgraph-io/ristretto v2.0.0
