@@ -3,7 +3,9 @@
 
 module github.com/stv0g/vand
 
-go 1.22.5
+go 1.22.6
+
+toolchain go1.23.5
 
 require (
 	dario.cat/mergo v1.0.1
@@ -26,7 +28,7 @@ require (
 	google.golang.org/protobuf v1.36.3
 	gopkg.in/yaml.v3 v3.0.1
 	periph.io/x/conn/v3 v3.7.1
-	periph.io/x/host/v3 v3.8.2
+	periph.io/x/host/v3 v3.8.3
 )
 
 require github.com/dgraph-io/badger/v4 v4.5.0
