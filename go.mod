@@ -9,7 +9,7 @@ toolchain go1.23.6
 
 require (
 	dario.cat/mergo v1.0.1
-	gioui.org v0.7.1
+	gioui.org v0.8.0
 	github.com/adrianmo/go-nmea v1.10.0
 	github.com/eclipse/paho.mqtt.golang v1.5.0
 	github.com/gin-contrib/static v1.1.3
@@ -22,8 +22,8 @@ require (
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.19.0
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
-	github.com/tdewolff/canvas v0.0.0-20241017013131-7441cbff7ba9
-	golang.org/x/image v0.22.0
+	github.com/tdewolff/canvas v0.0.0-20250209140343-015076d8ff76
+	golang.org/x/image v0.23.0
 	golang.org/x/sys v0.29.0
 	google.golang.org/protobuf v1.36.5
 	gopkg.in/yaml.v3 v3.0.1
@@ -36,8 +36,12 @@ require github.com/dgraph-io/badger/v4 v4.5.1
 require (
 	gioui.org/cpu v0.0.0-20220412190645-f1e9e8c3b1f7 // indirect
 	gioui.org/shader v1.0.8 // indirect
+	github.com/BurntSushi/freetype-go v0.0.0-20160129220410-b763ddbfe298 // indirect
+	github.com/BurntSushi/graphics-go v0.0.0-20160129215708-b43f31a4a966 // indirect
+	github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802 // indirect
+	github.com/BurntSushi/xgbutil v0.0.0-20190907113008-ad855c713046 // indirect
 	github.com/ByteArena/poly2tri-go v0.0.0-20170716161910-d102ad91854f // indirect
-	github.com/andybalholm/brotli v1.1.0 // indirect
+	github.com/andybalholm/brotli v1.1.1 // indirect
 	github.com/benoitkugler/textlayout v0.3.0 // indirect
 	github.com/benoitkugler/textprocessing v0.0.3 // indirect
 	github.com/bytedance/sonic v1.12.6 // indirect
@@ -47,14 +51,14 @@ require (
 	github.com/cloudwego/iasm v0.2.0 // indirect
 	github.com/dgraph-io/ristretto/v2 v2.1.0 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
-	github.com/fsnotify/fsnotify v1.7.0 // indirect
+	github.com/fsnotify/fsnotify v1.8.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.7 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
-	github.com/go-fonts/latin-modern v0.3.1 // indirect
+	github.com/go-fonts/latin-modern v0.3.3 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.23.0 // indirect
-	github.com/go-text/typesetting v0.1.1 // indirect
+	github.com/go-text/typesetting v0.2.1 // indirect
 	github.com/goburrow/serial v0.1.0 // indirect
 	github.com/goccy/go-json v0.10.4 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
@@ -80,10 +84,12 @@ require (
 	github.com/spf13/afero v1.11.0 // indirect
 	github.com/spf13/cast v1.6.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
+	github.com/srwiley/rasterx v0.0.0-20220730225603-2ab79fcdd4ef // indirect
+	github.com/srwiley/scanx v0.0.0-20190309010443-e94503791388 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
-	github.com/tdewolff/font v0.0.0-20240728193914-9dc6e3441d03 // indirect
-	github.com/tdewolff/minify/v2 v2.20.5 // indirect
-	github.com/tdewolff/parse/v2 v2.7.15 // indirect
+	github.com/tdewolff/font v0.0.0-20250206205927-2dd4de7757d6 // indirect
+	github.com/tdewolff/minify/v2 v2.21.1 // indirect
+	github.com/tdewolff/parse/v2 v2.7.21-0.20250206205826-9029f397cf8a // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	go.opencensus.io v0.24.0 // indirect
@@ -91,11 +97,11 @@ require (
 	go.uber.org/multierr v1.9.0 // indirect
 	golang.org/x/arch v0.12.0 // indirect
 	golang.org/x/crypto v0.32.0 // indirect
-	golang.org/x/exp v0.0.0-20240707233637-46b078467d37 // indirect
-	golang.org/x/exp/shiny v0.0.0-20240707233637-46b078467d37 // indirect
+	golang.org/x/exp v0.0.0-20241009180824-f66d83c29e7c // indirect
+	golang.org/x/exp/shiny v0.0.0-20241009180824-f66d83c29e7c // indirect
 	golang.org/x/net v0.34.0 // indirect
 	golang.org/x/sync v0.10.0 // indirect
 	golang.org/x/text v0.21.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
-	star-tex.org/x/tex v0.4.0 // indirect
+	star-tex.org/x/tex v0.5.0 // indirect
 )
