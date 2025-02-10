@@ -9,7 +9,7 @@ toolchain go1.23.6
 
 require (
 	dario.cat/mergo v1.0.1
-	gioui.org v0.7.1
+	gioui.org v0.8.0
 	github.com/adrianmo/go-nmea v1.10.0
 	github.com/eclipse/paho.mqtt.golang v1.5.0
 	github.com/gin-contrib/static v1.1.3
