@@ -3,9 +3,9 @@
 
 module github.com/stv0g/vand
 
-go 1.22.6
+go 1.23.0
 
-toolchain go1.23.6
+toolchain go1.24.1
 
 require (
 	dario.cat/mergo v1.0.1
@@ -23,7 +23,7 @@ require (
 	github.com/spf13/viper v1.19.0
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
 	github.com/tdewolff/canvas v0.0.0-20241017013131-7441cbff7ba9
-	golang.org/x/image v0.22.0
+	golang.org/x/image v0.25.0
 	golang.org/x/sys v0.29.0
 	google.golang.org/protobuf v1.36.5
 	gopkg.in/yaml.v3 v3.0.1
@@ -94,8 +94,8 @@ require (
 	golang.org/x/exp v0.0.0-20240707233637-46b078467d37 // indirect
 	golang.org/x/exp/shiny v0.0.0-20240707233637-46b078467d37 // indirect
 	golang.org/x/net v0.34.0 // indirect
-	golang.org/x/sync v0.10.0 // indirect
-	golang.org/x/text v0.21.0 // indirect
+	golang.org/x/sync v0.12.0 // indirect
+	golang.org/x/text v0.23.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	star-tex.org/x/tex v0.4.0 // indirect
 )
