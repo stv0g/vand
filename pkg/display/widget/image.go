@@ -29,10 +29,10 @@ func (w *Image) UnmarshalJSON(b []byte) error {
 	}
 
 	w.rect = canvas.Rect{
-		X: w.Position[0],
-		Y: w.Position[1],
-		W: w.Size[0],
-		H: w.Size[1],
+		X0: w.Position[0],
+		Y0: w.Position[1],
+		X1: w.Position[0] + w.Size[0],
+		Y1: w.Position[1] + w.Size[1],
 	}
 
 	return nil

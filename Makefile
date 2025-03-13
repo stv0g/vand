@@ -6,12 +6,7 @@ TARGET_HOST ?= root@rpi.bus.0l.de
 
 REMOTE = ssh -t -i ~/.ssh/id_rsa $(TARGET_HOST)
 
-export GOOS ?= linux
-export GOARCH ?= arm
-
-ifeq ($(GOARCH),arm)
-  export GOARM ?= 7
-endif
+export CGO_ENABLED ?= 1
 
 all: backend
 
@@ -20,7 +15,7 @@ frontend:
 	npm --prefix frontend/ run-script build
 
 backend:
-	go build -tags embed_frontend -o $(TARGET) ./cmd/
+	go build -tags embed_frontend,virtual -o $(TARGET) ./cmd/
 
 deploy: backend
 	rsync --progress $(TARGET) $(TARGET_HOST):/usr/local/bin/$(TARGET)
