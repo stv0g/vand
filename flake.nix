@@ -5,7 +5,7 @@
 
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
   };
 
   outputs =
@@ -21,9 +21,9 @@
       in
       rec {
         packages = {
-          vand =
-            let
-              frontend = pkgs.buildNpmPackage {
+          default = packages.backend;
+
+          frontend = pkgs.buildNpmPackage {
                 name = "vand-frontend";
                 src = ./frontend;
                 npmDepsHash = "sha256-5tXDAYY07aVnrCn7QIiPJrv9Fu+yG+Pyy9iysli6S/o=";
@@ -32,15 +32,18 @@
                   cp -r build/* $out/
                 '';
               };
-            in
-            pkgs.buildGoModule {
-              name = "vand";
+
+          backend = pkgs.buildGo124Module {
+              name = "vand-backend";
               src = ./.;
-              vendorHash = "sha256-dPNv9uFGbAk9Ul3YQ2woaifwez18O6plVDfd67grP+c=";
+              vendorHash = "sha256-85x6oOsfu2kQXaRhNKPRb5ZI8SKEsTAKD/5p0aFOM4E=";
 
               preBuild = ''
                 rm -rf frontend/build
-                cp -r ${frontend}/ frontend/build/
+                cp -r ${packages.frontend}/ frontend/build/
+
+                echo $PATH
+                pkg-config --version
               '';
 
               postInstall = ''
@@ -52,20 +55,18 @@
                 "virtual"
               ];
 
-              buildInputs =
-                with pkgs;
-                [
-                  protobuf
-                  protoc-gen-go
-                ]
-                ++ (
-                  if stdenv.isLinux then
+              nativeBuildInputs = with pkgs; [
+                pkg-config
+                protobuf
+                protoc-gen-go
+              ];
+
+              buildInputs = with pkgs; if stdenv.isLinux then
                     [
                       vulkan-headers
                       libxkbcommon
                       wayland
                       libGL
-                      pkg-config
                       xorg.libX11
                       xorg.libXcursor
                       xorg.libXfixes
@@ -80,9 +81,8 @@
                       frameworks.AppKit
                     ]
                   else
-                    [ ]
-                )
-                ++ (if stdenv.isLinux then with pkgs; [ libxkbcommon ] else [ ]);
+                    [ ];
+
               doCheck = false;
             };
         };
@@ -96,7 +96,10 @@
             nodejs_18
           ];
 
-          inputsFrom = [ packages.vand ];
+          inputsFrom = with packages; [
+            backend
+            frontend
+          ];
         };
 
         formatter = nixpkgs.nixfmt-rfc-style;
