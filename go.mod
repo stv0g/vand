@@ -21,7 +21,7 @@ require (
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.19.0
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
-	github.com/tdewolff/canvas v0.0.0-20250209140343-015076d8ff76
+	github.com/tdewolff/canvas v0.0.0-20250314093528-d5ba7cde7f22
 	golang.org/x/image v0.25.0
 	golang.org/x/sys v0.31.0
 	google.golang.org/protobuf v1.36.5
@@ -81,9 +81,9 @@ require (
 	github.com/srwiley/rasterx v0.0.0-20220730225603-2ab79fcdd4ef // indirect
 	github.com/srwiley/scanx v0.0.0-20190309010443-e94503791388 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
-	github.com/tdewolff/font v0.0.0-20250207110603-e57683ffdb59 // indirect
-	github.com/tdewolff/minify/v2 v2.21.3 // indirect
-	github.com/tdewolff/parse/v2 v2.7.21-0.20250207110456-867b66db0fb0 // indirect
+	github.com/tdewolff/font v0.0.0-20250314092958-e0eef3f68b08 // indirect
+	github.com/tdewolff/minify/v2 v2.22.1 // indirect
+	github.com/tdewolff/parse/v2 v2.7.21 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
