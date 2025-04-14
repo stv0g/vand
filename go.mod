@@ -21,7 +21,7 @@ require (
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.19.0
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
-	github.com/tdewolff/canvas v0.0.0-20250407064037-21ba20776900
+	github.com/tdewolff/canvas v0.0.0-20250409071931-b2b4fe5c4e6e
 	golang.org/x/image v0.26.0
 	golang.org/x/sys v0.32.0
 	google.golang.org/protobuf v1.36.6
