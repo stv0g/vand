@@ -183,7 +183,7 @@ func NewConfig(configFile string) (*Config, error) {
 		}
 	}
 
-	if err := cfg.UnmarshalExact(cfg, decodeOption); err != nil {
+	if err := cfg.UnmarshalExact(cfg, viper.DecodeHook(decodeOption)); err != nil {
 		return nil, fmt.Errorf("failed to unmarshal config: %w", err)
 	}
 
