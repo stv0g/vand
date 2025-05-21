@@ -32,7 +32,7 @@ func runGPS(cmd *cobra.Command, args []string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer client.Close()
+	defer client.Close() //nolint:errcheck
 
 	topic := fmt.Sprintf("%s/update", cfg.Broker.Topic)
 
