@@ -14,7 +14,7 @@ import (
 func (s *StateUpdatePoint) Dump(wr io.Writer) {
 	f := types.Flatten(s, ".")
 	for k, v := range f {
-		fmt.Fprintf(wr, "%s = %v\n", k, v)
+		fmt.Fprintf(wr, "%s = %v\n", k, v) //nolint:errcheck
 	}
 }
 

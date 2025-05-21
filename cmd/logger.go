@@ -31,7 +31,7 @@ func runLogger(cmd *cobra.Command, args []string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer client.Close()
+	defer client.Close() //nolint:errcheck
 
 	dbPath := fmt.Sprintf("%s/logger.db", cfg.DataDir)
 	dbOpts := badger.DefaultOptions(dbPath)
@@ -41,7 +41,7 @@ func runLogger(cmd *cobra.Command, args []string) {
 	if err != nil {
 		log.Fatalf("Failed to open database: %s", err)
 	}
-	defer db.Close()
+	defer db.Close() //nolint:errcheck
 
 	topic := fmt.Sprintf("%s/#", cfg.Broker.Topic)
 

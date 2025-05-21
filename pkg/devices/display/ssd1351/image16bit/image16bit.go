@@ -31,9 +31,9 @@ func NewBits(c color.Color) Bits {
 func (bi Bits) RGBA() (uint32, uint32, uint32, uint32) {
 	i := uint32(bi)
 
-	var r uint32 = ((i >> 11) & 0x1f) << 11
-	var g uint32 = ((i >> 5) & 0x3f) << 10
-	var b uint32 = ((i >> 0) & 0x1f) << 11
+	r := ((i >> 11) & 0x1f) << 11
+	g := ((i >> 5) & 0x3f) << 10
+	b := ((i >> 0) & 0x1f) << 11
 
 	return r, g, b, 0xffff
 }

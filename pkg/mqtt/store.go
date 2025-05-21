@@ -43,7 +43,7 @@ func (s *store) Put(key string, msg packets.ControlPacket) {
 		log.Fatalf("Failed to write: %s", err)
 	}
 
-	if err := s.DB.Update(func(txn *badger.Txn) error {
+	if err := s.Update(func(txn *badger.Txn) error {
 		return txn.Set([]byte(key), wr.Bytes())
 	}); err != nil {
 		log.Fatalf("Failed to list all keys: %s", err)
@@ -53,7 +53,7 @@ func (s *store) Put(key string, msg packets.ControlPacket) {
 func (s *store) Get(key string) packets.ControlPacket {
 	buf := bytes.NewBuffer(nil)
 
-	if err := s.DB.View(func(txn *badger.Txn) error {
+	if err := s.View(func(txn *badger.Txn) error {
 		if it, err := txn.Get([]byte(key)); err == nil {
 			return it.Value(func(val []byte) error {
 				_, err := buf.Write(val)
@@ -73,7 +73,7 @@ func (s *store) Get(key string) packets.ControlPacket {
 func (s *store) All() []string {
 	all := []string{}
 
-	if err := s.DB.View(func(txn *badger.Txn) error {
+	if err := s.View(func(txn *badger.Txn) error {
 		opts := badger.DefaultIteratorOptions
 		opts.PrefetchValues = false
 		it := txn.NewIterator(opts)
@@ -91,7 +91,7 @@ func (s *store) All() []string {
 }
 
 func (s *store) Del(key string) {
-	if err := s.DB.Update(func(txn *badger.Txn) error {
+	if err := s.Update(func(txn *badger.Txn) error {
 		return txn.Delete([]byte(key))
 	}); err != nil {
 		log.Fatalf("Failed to list all keys: %s", err)
@@ -105,7 +105,7 @@ func (s *store) Close() {
 }
 
 func (s *store) Reset() {
-	if err := s.DB.Update(func(txn *badger.Txn) error {
+	if err := s.Update(func(txn *badger.Txn) error {
 		opts := badger.DefaultIteratorOptions
 		opts.PrefetchValues = false
 
