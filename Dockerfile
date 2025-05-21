@@ -15,7 +15,7 @@ ENV CGO_ENABLED=0
 
 RUN go build -o vand ./cmd
 
-# FROM node:17 AS frontend-builder
+# FROM node:23 AS frontend-builder
 
 # ENV NODE_ENV=production
 
