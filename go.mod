@@ -21,9 +21,9 @@ require (
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.20.1
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
-	github.com/tdewolff/canvas v0.0.0-20250409071931-b2b4fe5c4e6e
-	golang.org/x/image v0.26.0
-	golang.org/x/sys v0.32.0
+	github.com/tdewolff/canvas v0.0.0-20250508181010-75987a1ae9cc
+	golang.org/x/image v0.27.0
+	golang.org/x/sys v0.33.0
 	google.golang.org/protobuf v1.36.6
 	gopkg.in/yaml.v3 v3.0.1
 	periph.io/x/conn/v3 v3.7.2
@@ -31,6 +31,7 @@ require (
 )
 
 require (
+	codeberg.org/go-pdf/fpdf v0.11.1 // indirect
 	gioui.org/shader v1.0.8 // indirect
 	github.com/BurntSushi/freetype-go v0.0.0-20160129220410-b763ddbfe298 // indirect
 	github.com/BurntSushi/graphics-go v0.0.0-20160129215708-b43f31a4a966 // indirect
@@ -82,9 +83,9 @@ require (
 	github.com/srwiley/rasterx v0.0.0-20220730225603-2ab79fcdd4ef // indirect
 	github.com/srwiley/scanx v0.0.0-20190309010443-e94503791388 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
-	github.com/tdewolff/font v0.0.0-20250314092958-e0eef3f68b08 // indirect
-	github.com/tdewolff/minify/v2 v2.23.0 // indirect
-	github.com/tdewolff/parse/v2 v2.7.22 // indirect
+	github.com/tdewolff/font v0.0.0-20250430140153-b654fd8acba3 // indirect
+	github.com/tdewolff/minify/v2 v2.23.4 // indirect
+	github.com/tdewolff/parse/v2 v2.8.0 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
@@ -93,14 +94,14 @@ require (
 	go.opentelemetry.io/otel/trace v1.35.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/arch v0.16.0 // indirect
-	golang.org/x/crypto v0.37.0 // indirect
-	golang.org/x/exp v0.0.0-20250305212735-054e65f0b394 // indirect
-	golang.org/x/exp/shiny v0.0.0-20250305212735-054e65f0b394 // indirect
-	golang.org/x/net v0.38.0 // indirect
-	golang.org/x/sync v0.13.0 // indirect
-	golang.org/x/text v0.24.0 // indirect
+	golang.org/x/crypto v0.38.0 // indirect
+	golang.org/x/exp v0.0.0-20250506013437-ce4c2cf36ca6 // indirect
+	golang.org/x/exp/shiny v0.0.0-20250506013437-ce4c2cf36ca6 // indirect
+	golang.org/x/net v0.40.0 // indirect
+	golang.org/x/sync v0.14.0 // indirect
+	golang.org/x/text v0.25.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
-	modernc.org/knuth v0.5.4 // indirect
+	modernc.org/knuth v0.5.5 // indirect
 	modernc.org/token v1.1.0 // indirect
-	star-tex.org/x/tex v0.6.0 // indirect
+	star-tex.org/x/tex v0.7.1 // indirect
 )
