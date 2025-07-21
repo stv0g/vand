@@ -9,7 +9,7 @@ require (
 	dario.cat/mergo v1.0.2
 	gioui.org v0.8.0
 	github.com/adrianmo/go-nmea v1.10.0
-	github.com/dgraph-io/badger/v4 v4.7.0
+	github.com/dgraph-io/badger/v4 v4.8.0
 	github.com/eclipse/paho.mqtt.golang v1.5.0
 	github.com/gin-contrib/static v1.1.5
 	github.com/gin-gonic/gin v1.10.1
@@ -51,7 +51,7 @@ require (
 	github.com/gabriel-vasile/mimetype v1.4.8 // indirect
 	github.com/gin-contrib/sse v1.0.0 // indirect
 	github.com/go-fonts/latin-modern v0.3.3 // indirect
-	github.com/go-logr/logr v1.4.2 // indirect
+	github.com/go-logr/logr v1.4.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
@@ -89,15 +89,15 @@ require (
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
-	go.opentelemetry.io/otel v1.35.0 // indirect
-	go.opentelemetry.io/otel/metric v1.35.0 // indirect
-	go.opentelemetry.io/otel/trace v1.35.0 // indirect
+	go.opentelemetry.io/otel v1.37.0 // indirect
+	go.opentelemetry.io/otel/metric v1.37.0 // indirect
+	go.opentelemetry.io/otel/trace v1.37.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/arch v0.16.0 // indirect
-	golang.org/x/crypto v0.38.0 // indirect
+	golang.org/x/crypto v0.39.0 // indirect
 	golang.org/x/exp v0.0.0-20250506013437-ce4c2cf36ca6 // indirect
 	golang.org/x/exp/shiny v0.0.0-20250506013437-ce4c2cf36ca6 // indirect
-	golang.org/x/net v0.40.0 // indirect
+	golang.org/x/net v0.41.0 // indirect
 	golang.org/x/sync v0.16.0 // indirect
 	golang.org/x/text v0.27.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
