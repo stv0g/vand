@@ -50,7 +50,7 @@ func Draw(ctx *canvas.Context) error {
 	// ctx.DrawImage(0, 0, img, canvas.DPMM(15.0))
 
 	headerFace := fontFamily.Face(8.0, canvas.Green, canvas.FontRegular, canvas.FontNormal)
-	ctx.DrawText(0, ctx.Height()/2, canvas.NewTextBox(headerFace, "Hello World", 0.0, 0.0, canvas.Left, canvas.Top, 0.0, 0.0))
+	ctx.DrawText(0, ctx.Height()/2, canvas.NewTextBox(headerFace, "Hello World", 0.0, 0.0, canvas.Left, canvas.Top, &canvas.TextOptions{}))
 
 	ctx.SetFillColor(canvas.Red)
 	ctx.SetStrokeWidth(1.0)
