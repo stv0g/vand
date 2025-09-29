@@ -239,6 +239,8 @@ github.com/tdewolff/canvas v0.0.0-20250728095813-50d4cb1eee71 h1:CIWvhVDNsEQd9T3
 github.com/tdewolff/canvas v0.0.0-20250728095813-50d4cb1eee71/go.mod h1:r5O5UHm7WMj6o9mbY1gdBHkg308r0EcfS/10YBbBLHI=
 github.com/tdewolff/canvas v0.0.0-20250901181509-0db6c05d88b8 h1:0WX3Wksprv0N0Waq1GkU1DAyAYNJLbbS7W+NwzLDKiA=
 github.com/tdewolff/canvas v0.0.0-20250901181509-0db6c05d88b8/go.mod h1:r5O5UHm7WMj6o9mbY1gdBHkg308r0EcfS/10YBbBLHI=
+github.com/tdewolff/canvas v0.0.0-20250923071733-b2b2ba99a987 h1:tzQqRIECH8fEHpkG16gD7uOadYfgSgAuzxq6GaHk8v0=
+github.com/tdewolff/canvas v0.0.0-20250923071733-b2b2ba99a987/go.mod h1:r5O5UHm7WMj6o9mbY1gdBHkg308r0EcfS/10YBbBLHI=
 github.com/tdewolff/font v0.0.0-20250207110603-e57683ffdb59 h1:3NrBFis5enKvyEv/4zjBadUHQm43byR3JxCvmO3Iqho=
 github.com/tdewolff/font v0.0.0-20250207110603-e57683ffdb59/go.mod h1:2luujrHSLGuJmSbtc+Guk5NLuw70pAFP4K3Rg8On4PE=
 github.com/tdewolff/font v0.0.0-20250314092958-e0eef3f68b08 h1:Y3N6Ybcu0KjE/PQz0FDHccNvWFXsgSUmlLzPQ0HNRSw=
