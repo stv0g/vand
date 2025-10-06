@@ -24,7 +24,7 @@ require (
 	github.com/tdewolff/canvas v0.0.0-20250923071733-b2b2ba99a987
 	golang.org/x/image v0.30.0
 	golang.org/x/sys v0.36.0
-	google.golang.org/protobuf v1.36.9
+	google.golang.org/protobuf v1.36.10
 	gopkg.in/yaml.v3 v3.0.1
 	periph.io/x/conn/v3 v3.7.2
 	periph.io/x/host/v3 v3.8.5
