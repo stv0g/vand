@@ -7,7 +7,7 @@ go 1.24.1
 
 require (
 	dario.cat/mergo v1.0.2
-	gioui.org v0.8.0
+	gioui.org v0.9.0
 	github.com/adrianmo/go-nmea v1.10.0
 	github.com/dgraph-io/badger/v4 v4.8.0
 	github.com/eclipse/paho.mqtt.golang v1.5.1
